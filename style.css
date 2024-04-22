@@ -1,0 +1,58 @@
+.nav{
+    list-style-type: none;
+    display: flex;
+    justify-content:space-between ;
+    flex-wrap: wrap;
+    border-bottom: solid 1px black;
+    padding-bottom: 1rem;
+}
+
+.nav-buttons{
+    display:flex;
+    gap: 5rem;
+}
+
+.banner{
+    display:grid;
+    grid-template-columns: 50% 50%;
+    gap: 1rem;
+    margin-bottom: 5rem;
+    padding-bottom: 2rem;
+}
+
+h1{
+    text-align: center;
+    font-size:4rem;
+    font-style: italic;
+}
+
+
+.text{
+    padding: 1rem;
+}
+
+
+.img{
+    width: 100%;
+    background: grey;
+    height: 24rem;
+}
+
+.timeline-container{
+
+}
+
+.timeline-list{
+    padding: 0;
+    list-style: none;
+    text-align: start;
+}
+
+.timeline-items{
+    padding: 0.8rem;
+    border-top: solid 1px black;
+}
+
+.timeline-items:nth-child(8){
+    border-bottom: solid 1px black;;
+}
