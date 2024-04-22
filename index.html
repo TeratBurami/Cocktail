@@ -10,12 +10,12 @@
     <!-- nav -->
     <nav>
         <ul class="nav">
-            <li class="nav-items">Cocktail</li>
+            <li class="nav-items">COCKTAILS</li>
             <div class="nav-buttons">
-                <li class="button">1</li>
-                <li class="button">2</li>
-                <li class="button">3</li>
-                <li class="button">4</li>
+                <li class="button"><a href="#timeline">Timeline</a></li>
+                <li class="button"><a href="#starter">Starter</a></li>
+                <li class="button"><a href="#menu">Menu</a></li>
+                <li class="button"><a href="#tools">Tools</a></li>
             </div>
         </ul>
     </nav>
@@ -32,17 +32,167 @@
     </div>
 
     <!-- timeline -->
-    <div class="timeline-container">
+    <div class="timeline-container" id="timeline">
+      <h1>Timeline</h1>
       <ul class="timeline-list">
-        <li class="timeline-items">1</li>
-        <li class="timeline-items">2</li>
-        <li class="timeline-items">3</li>
-        <li class="timeline-items">4</li>
-        <li class="timeline-items">5</li>
-        <li class="timeline-items">6</li>
-        <li class="timeline-items">7</li>
-        <li class="timeline-items">8</li>
+        <li class="timeline-items" onmouseover="mouseOver(0)" onmouseout="mouseOut(0)">
+          <div class="item">
+            <div>Pre-Dawn</div>
+            <div style="text-align: end;">01</div>
+          </div>
+          <div class=""></div>
+        </li>
+        <li class="timeline-items" onmouseover="mouseOver(1)" onmouseout="mouseOut(1)">
+          <div class="item">
+            <div>Dawn of the Cocktail</div>
+            <div style="text-align: end;">02</div>
+          </div>
+          <div class=""></div>
+        </li>
+        <li class="timeline-items" onmouseover="mouseOver(2)" onmouseout="mouseOut(2)">
+          <div class="item">
+            <div>Golden Age</div>
+            <div style="text-align: end;">03</div>
+          </div>
+          <div class=""></div>
+        </li>
+        <li class="timeline-items" onmouseover="mouseOver(3)" onmouseout="mouseOut(3)">
+          <div class="item">
+            <div>American Prohibition</div>
+            <div style="text-align: end;">04</div>
+          </div>
+          <div class=""></div>
+        </li>
+        <li class="timeline-items" onmouseover="mouseOver(4)" onmouseout="mouseOut(4)">
+          <div class="item">
+            <div>Years of Indulgence</div>
+            <div style="text-align: end;">05</div>
+          </div>
+          <div class=""></div>
+        </li>
+        <li class="timeline-items" onmouseover="mouseOver(5)" onmouseout="mouseOut(5)">
+          <div class="item">
+            <div>The Dark Ages</div>
+            <div style="text-align: end;">06</div>
+          </div>
+          <div class=""></div>
+        </li>
+        <li class="timeline-items" onmouseover="mouseOver(6)" onmouseout="mouseOut(6)">
+          <div class="item">
+            <div>Age of Rediscovery</div>
+            <div style="text-align: end;">07</div>
+          </div>
+          <div class=""></div>
+        </li>
+        <li class="timeline-items" onmouseover="mouseOver(7)" onmouseout="mouseOut(7)">
+          <div class="item">
+            <div>Cocktail Revival</div>
+            <div style="text-align: end;">08</div>
+          </div>
+          <div class=""></div>
+        </li>
       </ul>
     </div>
+
+    <!-- starter -->
+    <div class="starter" id="starter">
+      <h1>Starter</h1>
+      <div class="starter-container">
+        <div class="left-container">
+          <div class="starter-left-items">
+            <div class="img"></div>
+            <div class="text">
+              <h3>Cocktail Starters</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quam quos culpa modi fugiat, harum dolore expedita itaque sit optio mollitia eos reiciendis accusantium quas consequuntur magnam quae deleniti necessitatibus?</p>
+            </div>
+          </div>
+          <div class="starter-left-items">
+            <div class="text">
+              <h3>Starter Choices</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero molestias assumenda natus quo molestiae, minus nobis error, nemo debitis ex non maiores veniam nostrum cum, repellat labore reiciendis? Facilis, reprehenderit.</p>
+            </div>
+            <div class="img"></div>
+          </div>
+        </div>
+        <div class="right-container" style="border-left: solid 1px black;">
+          <!-- <img src="" alt=""> -->
+          <div class="img" style="border-bottom: solid 1px black;"></div>
+          <div>
+            <h3 style="font-style: italic; border-bottom: solid 1px black; padding-bottom: 0.5rem; padding-left: 1rem">Brandy</h3>
+            <p style="padding: 1rem;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit ad neque odio eos tenetur nisi fugit deserunt reiciendis ratione itaque, veniam perspiciatis excepturi officiis nemo? Eligendi ut ipsam aut placeat.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- menu -->
+    <div class="menu-container" id="menu">
+      <h1>MENU</h1>
+      <ul class="menu-items"></ul>
+    </div>
   </body>
+
+  <!-- tools -->
+  <div class="tools-container" id="tools">
+    <h1>TOOLS</h1>
+    <div class="grid">
+      <div class="row" style="display: grid;grid-template-columns: auto auto auto auto;">
+        <div class="tools-items square"><div class="img"></div></div>
+        <div class="tools-items square"><div class="img"></div></div>
+        <div class="tools-items square"><div class="img"></div></div>
+        <div class="tools-items square"><div class="img"></div></div>
+      </div>
+      <div class="row" style="display: grid;grid-template-columns: 50% 50%">
+        <div class="tools-items square"><div class="img" style="height: 100%;"></div></div>
+        <div style="display: grid;grid-template-columns: 50% 50%">
+          <div class="square tools-items"><div class="img"></div></div>
+          <div class="square tools-items"><div class="img"></div></div>
+          <div class="square tools-items"><div class="img"></div></div>
+          <div class="square tools-items"><div class="img"></div></div>
+        </div>
+      </div>
+      <div class="row" style="display: grid;grid-template-columns: 50% 25% 25%">
+        <div style="display: grid;grid-template-rows: 66% 33%">
+          <div style="display: grid;grid-template-columns: 50% 50%">
+            <div class="square tools-items"><div class="img"></div></div>
+            <div class="square tools-items"><div class="img"></div></div>
+            <div class="square tools-items"><div class="img"></div></div>
+            <div class="square tools-items"><div class="img"></div></div>
+          </div>
+          <div class="square tools-items"><div class="img"></div></div>
+        </div>
+
+        <div style="display: grid;grid-template-rows: 66% 33%">
+          <div class="square tools-items"><div class="img" style="height: 100%;"></div></div>
+          <div class="square tools-items"><div class="img"></div></div>
+        </div>
+        <div class="square tools-items"><div class="img" style="height: 100%;"></div></div>
+
+      </div>
+    </div>
+
+    <!-- quote -->
+    <div>
+      <h1 style="text-align: start; margin-left: 3rem; margin-bottom: 1rem;">Cheers to endless possibilities <br>in the world of cocktails !</h1>
+      <div style="width: 20rem; height: 1rem; background: gray; margin: auto;"></div>
+      <div style="margin:auto; margin-top: 2rem; background: lightgray; border-radius: 12rem; width: 30rem; height: 10rem;"></div>
+    </div>
+
+    <!-- footer -->
+    <footer style="padding: 3rem;">
+      <ul style="display: flex;list-style: none; justify-content: space-evenly;">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+      </ul>
+      <p style="text-align: center;">&copy; 2024 ...</p>
+      <p style="text-align: center;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, est assumenda. Animi rem architecto, accusantium ullam eaque temporibus autem tempora modi eos necessitatibus, cumque porro quod nesciunt alias officiis ex?</p>
+    </footer>
+    
+  </div>
+  <script src="script.js"></script>
 </html>
