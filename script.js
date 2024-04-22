@@ -38,8 +38,6 @@ const mouseOver=(index)=>{
 }
 
 const mouseOut=(index)=>{
-    // e.lastElementChild.removeChild()
     list[index].lastElementChild.setAttribute('class','test')
-    console.log(list[index].lastElementChild)
-    // list[index].lastElementChild.removeChild()
+    list[index].lastElementChild.firstElementChild.remove()
 }

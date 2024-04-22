@@ -1,5 +1,7 @@
+
 body{
     margin:0;
+    background: #FAF6EA;
 }
 
 .nav{
@@ -15,7 +17,7 @@ body{
 .nav-buttons{
     display:flex;
     gap: 5rem;
-    margin-right: 2rem;
+    margin-right: 3rem;
 }
 
 a{
@@ -33,14 +35,14 @@ a{
 
 h1{
     text-align: center;
-    font-size:4rem;
+    font-size:6rem;
+    font-weight: 100;
+    font-family: 'Times New Roman', Times, serif;
     font-style: italic;
+    color:#415E43;
 }
 
 
-.text{
-    padding: 1rem;
-}
 
 
 .img{
