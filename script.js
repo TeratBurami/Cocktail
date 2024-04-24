@@ -1,8 +1,21 @@
 const menu = [
-    'Irish coffee', 'Manhattan', 'Bourbun Mojito', 'Creamsicle Punch',
-    'Moscov mule', 'Green Dream', 'EL diable', 'Blue lagoon',
-    'Margarita', 'Classic gin and tonic', 'Martini', 'Rum Nehroni',
-    'Mojito', 'Brandy sour', 'French 95', 'White russian']
+    {name:'Irish coffee',type:'Irish Whiskey',price:"8.00-23.00$",image:"coffee.png"},
+    {name:'Manhattan',type:'Whiskey',price:"12.00-25.00$",image:"Manhattan.png"},
+    {name:'Bourbon Mojito',type:'Bourbon Whiskey',price:"7.00-15.00$",image:"Bourbon Mojito.png"},
+    {name:'Creamsicle Punch',type:'Vodka',price:"11.00-20.00$",image:"Creamsicle Punch.png"},
+    {name:'Moscow mule',type:'Vodka',price:"8.00-31.00$",image:"Moscow Mule.png"},
+    {name:'Green Dream',type:'Vodka',price:"7.00-19.00$",image:"Green Dream.png"},
+    {name:'EL diable',type:'Telquila',price:"11.00-35.00$",image:"EL diablo.png"},
+    {name:'Blue lagoon',type:'Telquila',price:"15.00-32.00$",image:"blue.png"},
+    {name:'Margarita',type:'Telquila',price:"12.00-28.00$",image:"Margarita.png"},
+    {name:'Classic gin and tonic',type:'Gin',price:"7.00-19.00$",image:"Classic Gin Tonic.png"},
+    {name:'Martini',type:'Gin',price:"11.00-31.00$",image:"Martini.png"},
+    {name:'Rum Nehroni',type:'Rum',price:"11.00-31.00$",image:"Rum Nehroni.png"},
+    {name:'Mojito',type:'Rum',price:"8.00-25.00$",image:"Mojito.png"},
+    {name:'Brandy sour',type:'Brandy',price:"8.00-25.00$",image:"Brandy Sour.png"},
+    {name:'French 95',type:'Brandy',price:"17.00-38.00$",image:"French 95.png"},
+    {name:'White russian',type:'Liqueur',price:"15.00-28.00$",image:"White Russian.png"}
+]
 
 const picture=[
     ['pre1.jpg','pre2.jpg'],
@@ -86,17 +99,29 @@ const bottles=[
 
 var items
 for (let cocktail = 1; cocktail <= menu.length; cocktail++) {
-    // console.log(`${cocktail}:${menu[cocktail]}`)
     const listItem = document.createElement('li')
-    listItem.innerHTML += `
-    <div style="display:flex;justify-content:space-between;margin-bottom:5rem;font-style: italic;font-weight:bold;font-size:1.3rem">
-        <div>${menu[cocktail - 1]}</div>
-        <div>${String((cocktail)).padStart(2, '0')}</div>
-    </div>
-    <div class="img" style="scale:80%"></div>
-    `
+    listItem.innerHTML = `
+    <li onmouseover="menuOver(${cocktail})">
+        <div style="margin:0 0 0.5rem 1rem;display:flex;justify-content:space-between;font-style: italic;font-weight:light;font-size:2rem;color:#415E43">
+            <div>${menu[cocktail - 1].name}</div>
+            <div>${String((cocktail)).padStart(2, '0')}</div>
+        </div>
+        <p style="margin:0 0 0.5rem 1rem;background:#415E43;width:fit-content;padding:0.3rem 0.5rem 0.3rem 0.5rem;border-radius:5rem;color:white;font-family: 'Overused Grotesk Regular';">${menu[cocktail - 1].type}</p>
+        <p style="margin:0 0 0 1rem;font-family: 'Overused Grotesk Regular';">${menu[cocktail - 1].price}</p>
+        <img src="/images/menu/${menu[cocktail - 1].image}" style="object-fit:cover; width:100%">
+    </li>
+    ` 
     listItem.setAttribute('class', 'list')
     document.querySelector('.menu-items').appendChild(listItem)
+}
+
+let menuHovering=document.getElementsByClassName('list')
+const menuOver=(index)=>{
+    //continue
+}
+
+const menuOut=(index)=>{
+    //continue
 }
 
 let droplist = document.createElement('div')
@@ -104,7 +129,7 @@ let droplist = document.createElement('div')
 const list=document.getElementsByClassName('timeline-items')
 const mouseOver=(index)=>{
     droplist.innerHTML=`
-    <div style="padding:0.5rem 2rem 0.5rem 2rem; display:flex; justify-content:between; gap:2rem">
+    <div style="animation:fade 1s;padding:0.5rem 2rem 0.5rem 2rem; display:flex; justify-content:between; gap:2rem">
         <div style="display:flex; flex-direction:column; justify-content:space-between;">
             <h3 style="font-size:2rem;font-family: 'Overused Grotesk Regular';">${topic[index]}</h3>
             <p style="font-size:1rem;font-family: 'Overused Grotesk Regular';">${text[index]}</p>
@@ -130,15 +155,17 @@ const mouseOut=(index)=>{
 
 var page=0
 let bottleDisplay=document.getElementById('right-container');
-bottleDisplay.innerHTML=`
-    <button style="cursor:pointer ;position: absolute; top: 30%; font-size: 2rem; background: none; border:none">&lt;</button>
-    <button style="cursor:pointer ;position: absolute; left:95%; top: 30%; font-size: 2rem; background: none; border:none">&gt;</button>
-    <div style="border-left: solid 1px black;">
+
+const changeSlide=()=>{
+    bottleDisplay.innerHTML=`
+    <button onclick="prevSlide()" style="cursor:pointer ;position: absolute; top: 30%; font-size: 2rem; background: none; border:none">&lt;</button>
+    <button onclick="nextSlide()" style="cursor:pointer ;position: absolute; left:95%; top: 30%; font-size: 2rem; background: none; border:none">&gt;</button>
+    <div style="animation:fade 0.5s; border-left: solid 1px black;">
         <div style="margin:1rem 2rem 0 0;float:right;background:#415E43; border-radius:5rem;padding:0rem 1rem 0rem 1rem; width:fit-content">
             <h3 style="font-size:1.2rem;margin:0;text-align:center;font-family: Overused Grotesk Light;color:white;">${bottles[page][0].percent}</h3>
             <p style="font-size:0.6rem;color:white;margin:0 0 0.3rem 0;font-family: Overused Grotesk Light;">Concentration of Alcohol</p>
         </div>
-        <img src="${bottles[page][0].image}" style="object-fit:cover; width:100%">
+        <img src="${bottles[page][0].image}" style="object-fit:cover; width:100%; margin-bottom:2rem">
         <div>
             <h3 id="name1" style="font-size:1.5rem;font-family: Overused Grotesk Light;border-bottom: solid 1px black;border-top: solid 1px black; padding:0.5rem 0.5rem 0.5rem 2rem;margin:0;">${bottles[page][0].name}</h3>
             <div style="font-family: Overused Grotesk Light;font-size:0.8rem;display:flex; justify-content:space-between;padding:0.5rem">
@@ -147,11 +174,37 @@ bottleDisplay.innerHTML=`
             </div>
         </div>
     </div>
-    <div style="border-left: solid 1px black;">
-        <div id="preview2" class="img" style="border-bottom: solid 1px black;"></div>
+    <div style="animation:fade 0.5s; border-left: solid 1px black;">
+        <div style="margin:1rem 2rem 0 0;float:right;background:#415E43; border-radius:5rem;padding:0rem 1rem 0rem 1rem; width:fit-content">
+            <h3 style="font-size:1.2rem;margin:0;text-align:center;font-family: Overused Grotesk Light;color:white;">${bottles[page][1].percent}</h3>
+            <p style="font-size:0.6rem;color:white;margin:0 0 0.3rem 0;font-family: Overused Grotesk Light;">Concentration of Alcohol</p>
+        </div>
+        <img src="${bottles[page][1].image}" style="object-fit:cover; width:100%; margin-bottom:2rem">
         <div>
-            <h3 id="name2" style="font-style: italic; border-bottom: solid 1px black; padding-bottom: 0.5rem; padding-left: 1rem"></h3>
-            <p id="detail2" style="padding: 1rem;"></p>
+            <h3 id="name1" style="font-size:1.5rem;font-family: Overused Grotesk Light;border-bottom: solid 1px black;border-top: solid 1px black; padding:0.5rem 0.5rem 0.5rem 2rem;margin:0;">${bottles[page][1].name}</h3>
+            <div style="font-family: Overused Grotesk Light;font-size:0.8rem;display:flex; justify-content:space-between;padding:0.5rem">
+                <p style="width:70%">${bottles[page][1].detail}</p>
+                <p style="">${bottles[page][1].price}</p>
+            </div>
         </div>
     </div>
-`
+    `
+}
+
+changeSlide()
+
+const nextSlide=()=>{
+    if(page<2){
+        page+=1
+        changeSlide()
+    }
+}
+
+const prevSlide=()=>{
+    if(page>0){
+        page-=1
+        changeSlide()
+    }
+}
+
+

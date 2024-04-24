@@ -12,6 +12,10 @@
     src: url('/fonts/OverusedGrotesk-Light-BF64eeac18175cf.woff');
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body{
     margin:0;
     background: #FAF6EA;
@@ -162,4 +166,9 @@ h1{
     background: #415E43;
     color:#FAF6EA;
     list-style: none;
+}
+
+@keyframes fade{
+    from{opacity:0}
+    to{opacity:1}
 }
