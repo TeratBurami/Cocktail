@@ -12,27 +12,23 @@
   <body>
     <!-- nav -->
     <nav>
-        <ul class="nav">
-            <li class="nav-items" style="font-family: Space Grotesk, sans-serif; font-size: 1.5rem;">COCKTAILS</li>
-            <div class="nav-buttons">
-                <li class="button" style="font-family: Space Grotesk, sans-serif; font-size: 1.5rem;"><a href="#timeline">Timeline</a></li>
-                <li class="button" style="font-family: Space Grotesk, sans-serif; font-size: 1.5rem;"><a href="#starter">Starter</a></li>
-                <li class="button" style="font-family: Space Grotesk, sans-serif; font-size: 1.5rem;"><a href="#menu">Menu</a></li>
-                <li class="button" style="font-family: Space Grotesk, sans-serif; font-size: 1.5rem;"><a href="#tools">Tools</a></li>
-            </div>
-        </ul>
+            <p id="nav-items" style="font-family: Space Grotesk, sans-serif; font-size: 1.5rem; margin:0;">COCKTAILS</p>
+            <ul class="nav-buttons">
+                <li class="button" style="font-family: Space Grotesk, sans-serif;"><a href="#timeline">Timeline</a></li>
+                <li class="button" style="font-family: Space Grotesk, sans-serif;"><a href="#starter">Starter</a></li>
+                <li class="button" style="font-family: Space Grotesk, sans-serif;"><a href="#menu">Menu</a></li>
+                <li class="button" style="font-family: Space Grotesk, sans-serif;"><a href="#tools">Tools</a></li>
+            </ul>
     </nav>
 
     <!-- banner -->
     <div class="banner">
       <div class="text" style="margin: 0;">
-        <img src="images/cocktales.svg" alt="" style="width:100%;margin: 4rem 0 0 4rem;">
-        <p style="margin: 4rem 0 0 12rem;">Shake it ‘til you make it</p>
-        <img src="images/banner-drink.svg" alt="" style="width:100%;margin-top: 4rem;">
+        <img src="images/cocktales.svg" alt="" id="cocktail_banner">
+        <p id="shakeit" style="text-align: center;margin: 0;font-family: 'Overused Grotesk Regular';font-weight: bold;padding: 0;">Shake it ‘til you make it</p>
+        <img src="images/banner-drink.svg" alt="" style="margin-top: 4rem;" id="banner-drink">
       </div>
-      <div class="picture">
-        <img src="images/banner_pic.svg" alt="" style="width: 100%; float: right;">
-      </div>
+      <img src="images/banner_pic.svg" alt="" style="width: 100%; float: right; " id="banner">
     </div>
 
     <!-- timeline -->
@@ -209,11 +205,11 @@
       </div>
       <div class="row" style="display: grid;grid-template-columns: 50% 50%">
         <div class="tools-items hoverTools" onmouseenter="toolOver(0)" onmouseleave="toolOut(0)" style="display: flex;flex-direction: column;justify-content: space-between;">
-          <div style="border-bottom:solid 1px black;color:#4D644F;padding:0.5rem;margin:0 0 0 0;display:flex;justify-content:space-between;font-style: italic;font-weight:light;font-size:1.8rem;">
+          <div style="border-bottom:solid 1px black;color:#4D644F;padding:1rem;margin:0 0 0 0;display:flex;justify-content:space-between;font-style: italic;font-weight:light;font-size:1.8rem;">
             <h3 style="margin:0; font-weight: 100;">Cocktails Strainer</h3>
             <h3 style="margin:0; font-weight: 100;">03</h3>
           </div>
-          <div><img class="img" src="/images/tools/tools-18.png" alt=""></div>
+          <img class="img" src="/images/tools/tools-18.png" alt="">
         </div>
         <div style="display: grid;grid-template-columns: 50% 50%">
           <div class="tools-items"><img class="img" src="/images/tools/tools-19.png" alt=""></div>
@@ -286,26 +282,12 @@
       </div>
     </div>
 
-    <!-- quote -->
-    <div>
-      <h1 style="text-align: start; margin-left: 3rem; margin-bottom: 1rem;">Cheers to endless possibilities <br>in the world of cocktails !</h1>
-      <div style="width: 20rem; height: 1rem; background: gray; margin: auto;"></div>
-      <div style="margin:auto; margin-top: 2rem; background: lightgray; border-radius: 12rem; width: 30rem; height: 10rem;"></div>
-    </div>
-
     <!-- footer -->
-    <footer style="padding: 3rem;">
-      <ul style="display: flex;list-style: none; justify-content: space-evenly;">
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
-        <li>6</li>
-        <li>7</li>
-      </ul>
-      <p style="text-align: center;">&copy; 2024 ...</p>
-      <p style="text-align: center;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, est assumenda. Animi rem architecto, accusantium ullam eaque temporibus autem tempora modi eos necessitatibus, cumque porro quod nesciunt alias officiis ex?</p>
+    <footer>
+      <h1 style="text-align: center; margin-left: 2rem; margin-bottom: 1rem;">Cheers to endless possibilities <br>in the world of cocktails !</h1>
+      <p style="text-align: center;font-family: 'Overused Grotesk Regular'; font-size: 2rem;">Sip, savor, and celebrate with us</p>
+      <img src="/images/footer/desktop.svg" alt="" style="width: 50%; margin: 0 auto 0 auto; display: block;margin-bottom: 5rem;">
+      <p style="text-align: center;font-family: 'Overused Grotesk Regular';margin-bottom: 3rem;">&copy; 2024 Sometimes Always<br>Sometimes Always acknowledges the Traditional Custodians of country throughout Australia and their connections to lanad sea and community.<br>We pay our respect to their Edlers past and present and extend that respect to all Aboriginal and Torres Strait Islander peoples</p>
     </footer>
     
   </div>

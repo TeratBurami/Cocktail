@@ -113,6 +113,7 @@ const levelBar=(data)=>{
 
 
 const menuOver=(index)=>{
+    console.log('over')
     let menuItem=document.querySelector(`#menuItem-${index}`)
     let price_bar=document.querySelector(`#price-bar-${index}`)
     price_bar.innerHTML=`
@@ -125,18 +126,25 @@ const menuOver=(index)=>{
             ${levelBar(menu[index].bitter)}
         </div>
     `
-    menuItem.lastElementChild.innerHTML=`
-        <p style="padding:1rem; font-family: Overused Grotesk Regular;">${menu[index].detail}</p>
-    `
+    
+    menuItem.lastElementChild.remove()
+    let detail=document.createElement('p')
+    detail.innerText=menu[index].detail
+    detail.style.padding='1rem'
+    detail.style.fontFamily='Overused Grotesk Regular'
+    menuItem.appendChild(detail)
 }
 
 const menuOut=(index)=>{
+    console.log('not over')
     let menuItem=document.querySelector(`#menuItem-${index}`)
     let price_bar=document.querySelector(`#price-bar-${index}`)
     price_bar.innerHTML=`<p style="margin:1rem 0 0 0.5rem;font-family: Overused Grotesk Regular;">${menu[index].price}</p>`
-    menuItem.lastElementChild.innerHTML=`
-        <img src="/images/menu/${menu[index].image}" style="object-fit:cover; width:100%">
-    `
+    menuItem.lastElementChild.remove()
+    let pic=document.createElement('img')
+    pic.src=`/images/menu/${menu[index].image}`
+    pic.style.objectFit='cover'
+    menuItem.appendChild(pic)
 }
 
 
@@ -219,43 +227,64 @@ const prevSlide=()=>{
     }
 }
 
-let hoverTools=document.getElementsByClassName('hoverTools')
 
 const li_Display=(data)=>{
     let html=''
     data.forEach(e => {
-        html+=`<li>${e}</li>`
+        html+=`<li>- &nbsp;&nbsp; ${e}</li>`
     });
-    return '<ul style="padding:0.5rem;font-family: Overused Grotesk Regular;">'+html+'</ul>'
+    return '<ul style="list-style:none;padding:0.5rem;font-family: Overused Grotesk Regular;">'+html+'</ul>'
 }
 
 const toolOver=(index)=>{
+    console.log('over')
+    let hoverTools=document.getElementsByClassName('hoverTools')
     hoverTools[index].innerHTML=`
         <div>
-            <div style="color:#FAF6EA;padding:0.5rem;margin:0;display:flex;justify-content:space-between;font-style: italic;font-weight:light;font-size:1.8rem;">
+            <div style="color:#FAF6EA;padding:1rem;margin:0;display:flex;justify-content:space-between;font-style: italic;font-weight:light;font-size:1.8rem;">
                 <h3 style="margin:0; font-weight: 100;">${tools[index].name}</h3>
                 <h3 style="margin:0; font-weight: 100;">${tools[index].number}</h3>
             </div>
-            <p style="padding:0.5rem;font-family: 'Overused Grotesk Regular';">${tools[index].detail}</p>
+            <p style="padding:1rem;font-family: 'Overused Grotesk Regular';">${tools[index].detail}</p>
         </div>
-        <div>
-            ${li_Display(tools[index].type)}
-            ${li_Display(tools[index].how)}
+        <div style="padding:1rem">
+            ${tools[index].type? '<p style="margin:0;font-family: Overused Grotesk Regular;">Types:</p>':''}
+            ${tools[index].type? li_Display(tools[index].type):''}
+            ${tools[index].how? '<p style="margin:0;font-family: Overused Grotesk Regular;">How to Use:</p>':''}
+            ${tools[index].how? li_Display(tools[index].how):''}
         </div>
     `
 }
 
 const toolOut=(index)=>{
-    console.log(hoverTools[index],' not hovering')
+    console.log('not over')
+    let hoverTools=document.getElementsByClassName('hoverTools')
     hoverTools[index].innerHTML=`
-        <div style="border-bottom:solid 1px black;color:#4D644F;padding:0.5rem;margin:0;display:flex;justify-content:space-between;font-style: italic;font-weight:light;font-size:1.8rem;">
+        <div style="border-bottom:solid 1px black;color:#4D644F;padding:1rem;margin:0 0 0 0;display:flex;justify-content:space-between;font-style: italic;font-weight:light;font-size:1.8rem;">
             <h3 style="margin:0; font-weight: 100;">${tools[index].name}</h3>
             <h3 style="margin:0; font-weight: 100;">${tools[index].number}</h3>
         </div>
-        <img class="img" src="/images/tools/${tools[index].image}" alt="" style="display: block;margin:auto;>
+        <img class="img" src="/images/tools/${tools[index].image}" alt="" style="object-fit:cover">
     `
 }
 
+
+
+function responsive(mobile) {
+    if (mobile.matches) {
+        document.getElementById('banner').src='/images/banner_mobile.svg'
+    } else {
+        document.getElementById('banner').src='/images/banner_pic.svg'
+    }
+  }
+  
+  var mobile = window.matchMedia("(max-width: 700px)")
+  
+  responsive(mobile);
+  
+  mobile.addEventListener("change", function() {
+    responsive(mobile);
+  });
 
 
 changeSlide()
@@ -271,14 +300,13 @@ for (let cocktail = 0; cocktail <= menuList.length; cocktail++) {
                 <div>${menu[cocktail].name}</div>
                 <div>${String((cocktail+1)).padStart(2, '0')}</div>
             </div>
-            <p style="margin:0 0 0.5rem 0.5rem;background:#415E43;width:fit-content;padding:0.3rem 0.8rem 0.3rem 0.8rem;border-radius:5rem;color:white;font-family: 'Overused Grotesk Regular';border:solid 1px #FAF6EA; font-size:0.8rem">${menu[cocktail].type}</p>
+            <p style="margin:0 0 0.5rem 0.5rem;background:#415E43;width:fit-content;padding:0.3rem 0.8rem 0.3rem 0.8rem;border-radius:5rem;color:#FAF6EA;font-family: 'Overused Grotesk Regular';border:solid 1px #FAF6EA; font-size:0.8rem">${menu[cocktail].type}</p>
             <div id="price-bar-${cocktail}">
                 <p style="margin:1rem 0 0 0.5rem;font-family: 'Overused Grotesk Regular';">${menu[cocktail].price}</p>
             </div>
         </div>
-        <div>
-            <img src="/images/menu/${menu[cocktail].image}" style="object-fit:cover; width:100%">
-        </div>
+        <img src="/images/menu/${menu[cocktail].image}" style="object-fit:cover; width:100%">
     </div>
     ` 
 }
+
