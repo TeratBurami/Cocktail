@@ -18,9 +18,9 @@ const menu = [
 ]
 
 const tools=[
-    {name:'Cocktails Strainer',number:'03',detail:'Used to separate solid ingredients or ice from liquid when pouring a cocktail from a mixing glass or shaker into a serving glass. It prevents ice shards, fruit chunks, herbs, or other solid ingredients from entering the final drink.',type:['Boston shaker (two-piece),','cobbler shaker (three-piece),','or Parisian shaker (French-style).'],how:['Add ingredients to the shaker tin or glass.','Seal the shaker with the lid securely.','Hold with both hands and shake vigorously for 10-15 seconds','Strain the cocktail into a glass using a Hawthorne strainer or fine mesh strainer.']},
-    {name:'',number:'07',detail:'',type:'',how:''},
-    {name:'',number:'08',detail:'',type:'',how:''}
+    {name:'Cocktails Strainer',number:'03',detail:'Used to separate solid ingredients or ice from liquid when pouring a cocktail from a mixing glass or shaker into a serving glass. It prevents ice shards, fruit chunks, herbs, or other solid ingredients from entering the final drink.',type:['Boston shaker (two-piece),','cobbler shaker (three-piece),','or Parisian shaker (French-style).'],how:['Add ingredients to the shaker tin or glass.','Seal the shaker with the lid securely.','Hold with both hands and shake vigorously for 10-15 seconds','Strain the cocktail into a glass using a Hawthorne strainer or fine mesh strainer.'],image:'tools-18.png'},
+    {name:'Muddler',number:'07',detail:'Used to crush and extract flavors from fruits, herbs, and spices. Typically made of wood, metal, or plastic, muddlers come in various shapes and sizes, but most have a flat bottom and a handle.',type:'',how:['Place the ingredients in the bottom of the mixing glass or shaker','Press and twist the muddler gently to release the flavors without damaging the ingredients.'],image:'tools-23.png'},
+    {name:'Bar Spoon',number:'08',detail:'A specialized spoon used in cocktail making, typically longer than a regular spoon. It usually measures around 10 to 12 inches in length, with a twisted handle and a small bowl at the end.',type:'',how:['To mix cocktails directly in the glass, ensuring even distribution of ingredients and flavors.','They\'re also used for layering drinks, where different liquids are carefully poured over one another to create visually appealing and layered cocktails.','Simply hold the spoon by its handle and insert it into the cocktail glass, then gently stir or layer as desired, using a smooth and controlled motion.'],image:'tools-25.png'}
 ]
 
 const picture=[
@@ -219,16 +219,40 @@ const prevSlide=()=>{
     }
 }
 
-const toolOver=(index)=>{
-    e.innerHTML=`
+let hoverTools=document.getElementsByClassName('hoverTools')
 
+const li_Display=(data)=>{
+    let html=''
+    data.forEach(e => {
+        html+=`<li>${e}</li>`
+    });
+    return '<ul style="padding:0.5rem;font-family: Overused Grotesk Regular;">'+html+'</ul>'
+}
+
+const toolOver=(index)=>{
+    hoverTools[index].innerHTML=`
+        <div>
+            <div style="color:#FAF6EA;padding:0.5rem;margin:0;display:flex;justify-content:space-between;font-style: italic;font-weight:light;font-size:1.8rem;">
+                <h3 style="margin:0; font-weight: 100;">${tools[index].name}</h3>
+                <h3 style="margin:0; font-weight: 100;">${tools[index].number}</h3>
+            </div>
+            <p style="padding:0.5rem;font-family: 'Overused Grotesk Regular';">${tools[index].detail}</p>
+        </div>
+        <div>
+            ${li_Display(tools[index].type)}
+            ${li_Display(tools[index].how)}
+        </div>
     `
 }
 
 const toolOut=(index)=>{
-    let hoverTools=document.querySelector('.hoverTools')
+    console.log(hoverTools[index],' not hovering')
     hoverTools[index].innerHTML=`
-        
+        <div style="border-bottom:solid 1px black;color:#4D644F;padding:0.5rem;margin:0;display:flex;justify-content:space-between;font-style: italic;font-weight:light;font-size:1.8rem;">
+            <h3 style="margin:0; font-weight: 100;">${tools[index].name}</h3>
+            <h3 style="margin:0; font-weight: 100;">${tools[index].number}</h3>
+        </div>
+        <img class="img" src="/images/tools/${tools[index].image}" alt="" style="display: block;margin:auto;>
     `
 }
 
