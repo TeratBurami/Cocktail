@@ -39,56 +39,56 @@
     <div class="timeline-container" id="timeline">
       <h1>Timeline</h1>
       <ul class="timeline-list">
-        <li class="timeline-items" onmouseover="mouseOver(0)" onmouseout="mouseOut(0)">
+        <li class="timeline-items" onmouseenter="mouseOver(0)" onmouseleave="mouseOut(0)">
           <div class="item">
             <div>Pre-Dawn</div>
             <div class="year">Before 1800</div>
           </div>
           <div class=""></div>
         </li>
-        <li class="timeline-items" onmouseover="mouseOver(1)" onmouseout="mouseOut(1)">
+        <li class="timeline-items" onmouseenter="mouseOver(1)" onmouseleave="mouseOut(1)">
           <div class="item">
             <div>Dawn of the Cocktail</div>
             <div class="year">1800-1860</div>
           </div>
           <div class=""></div>
         </li>
-        <li class="timeline-items" onmouseover="mouseOver(2)" onmouseout="mouseOut(2)">
+        <li class="timeline-items" onmouseenter="mouseOver(2)" onmouseleave="mouseOut(2)">
           <div class="item">
             <div>Golden Age</div>
             <div class="year">1860-1920</div>
           </div>
           <div class=""></div>
         </li>
-        <li class="timeline-items" onmouseover="mouseOver(3)" onmouseout="mouseOut(3)">
+        <li class="timeline-items" onmouseenter="mouseOver(3)" onmouseleave="mouseOut(3)">
           <div class="item">
             <div>American Prohibition</div>
             <div class="year">1920-1933</div>
           </div>
           <div class=""></div>
         </li>
-        <li class="timeline-items" onmouseover="mouseOver(4)" onmouseout="mouseOut(4)">
+        <li class="timeline-items" onmouseenter="mouseOver(4)" onmouseleave="mouseOut(4)">
           <div class="item">
             <div>Years of Indulgence</div>
             <div class="year">1934-1968</div>
           </div>
           <div class=""></div>
         </li>
-        <li class="timeline-items" onmouseover="mouseOver(5)" onmouseout="mouseOut(5)">
+        <li class="timeline-items" onmouseenter="mouseOver(5)" onmouseleave="mouseOut(5)">
           <div class="item">
             <div>The Dark Ages</div>
             <div class="year">1969-1989</div>
           </div>
           <div class=""></div>
         </li>
-        <li class="timeline-items" onmouseover="mouseOver(6)" onmouseout="mouseOut(6)">
+        <li class="timeline-items" onmouseenter="mouseOver(6)" onmouseleave="mouseOut(6)">
           <div class="item">
             <div>Age of Rediscovery</div>
             <div class="year">1990-2000</div>
           </div>
           <div class=""></div>
         </li>
-        <li class="timeline-items" onmouseover="mouseOver(7)" onmouseout="mouseOut(7)">
+        <li class="timeline-items" onmouseenter="mouseOver(7)" onmouseleave="mouseOut(7)">
           <div class="item">
             <div>Cocktail Revival</div>
             <div class="year">2000-Present</div>
@@ -132,7 +132,56 @@
     <!-- menu -->
     <div class="menu-container" id="menu">
       <h1>Menu</h1>
-      <ul class="menu-items"></ul>
+      <ul class="menu-items">
+        <li class="menu-list" onmouseenter="menuOver(0)" onmouseleave="menuOut(0)">
+          <div></div>
+        </li>
+        <li class="menu-list" onmouseenter="menuOver(1)" onmouseleave="menuOut(1)">
+          <div></div>
+        </li>
+        <li class="menu-list" onmouseenter="menuOver(2)" onmouseleave="menuOut(2)">
+          <div></div>
+        </li>
+        <li class="menu-list" onmouseenter="menuOver(3)" onmouseleave="menuOut(3)">
+          <div></div>
+        </li>
+        <li class="menu-list" onmouseenter="menuOver(4)" onmouseleave="menuOut(4)">
+          <div></div>
+        </li>
+        <li class="menu-list" onmouseenter="menuOver(5)" onmouseleave="menuOut(5)" >
+          <div></div>
+        </li>
+        <li class="menu-list" onmouseenter="menuOver(6)" onmouseleave="menuOut(6)">
+          <div></div>
+        </li>
+        <li class="menu-list" onmouseenter="menuOver(7)" onmouseleave="menuOut(7)">
+          <div></div>
+        </li>
+        <li class="menu-list" onmouseenter="menuOver(8)" onmouseleave="menuOut(8)">
+          <div></div>
+        </li>
+        <li class="menu-list" onmouseenter="menuOver(9)" onmouseleave="menuOut(9)">
+          <div></div>
+        </li>
+        <li class="menu-list" onmouseenter="menuOver(10)" onmouseleave="menuOut(10)">
+          <div></div>
+        </li>
+        <li class="menu-list" onmouseenter="menuOver(11)" onmouseleave="menuOut(11)">
+          <div></div>
+        </li>
+        <li class="menu-list" onmouseenter="menuOver(12)" onmouseleave="menuOut(12)">
+          <div></div>
+        </li>
+        <li class="menu-list" onmouseenter="menuOver(13)" onmouseleave="menuOut(13)">
+          <div></div>
+        </li>
+        <li class="menu-list" onmouseenter="menuOver(14)" onmouseleave="menuOut(14)">
+          <div></div>
+        </li>
+        <li class="menu-list" onmouseenter="menuOver(15)" onmouseleave="menuOut(15)">
+          <div></div>
+        </li>
+      </ul>
     </div>
   </body>
 
@@ -140,37 +189,99 @@
   <div class="tools-container" id="tools">
     <h1>TOOLS</h1>
     <div class="grid">
-      <div class="row" style="display: grid;grid-template-columns: auto auto auto auto;">
-        <div class="tools-items square"><div class="img"></div></div>
-        <div class="tools-items square"><div class="img"></div></div>
-        <div class="tools-items square"><div class="img"></div></div>
-        <div class="tools-items square"><div class="img"></div></div>
+      <div class="row" style="display: grid;grid-template-columns: 25% 25% 25% 25%;">
+        <div class="tools-items"><img src="images/tools/tools-16.png" alt=""></div>
+        <div class="tools-items">
+          <div style="color:#4D644F;padding:0.5rem;margin:0 0 0 0;display:flex;justify-content:space-between;font-style: italic;font-weight:light;font-size:1.8rem;">
+            <h3 style="margin:0; font-weight: 100;">Bar Strainer</h3>
+            <h3 style="margin:0; font-weight: 100;">01</h3>
+          </div>
+          <p style="margin:0;padding:0.5rem;font-family: Overused Grotesk Regular;font-size: 0.8rem;">Used for straining cocktails that are stirred or built directly in the serving glass.</p>
+        </div>
+        <div class="tools-items"><img src="images/tools/tools-17.png" alt=""></div>
+        <div class="tools-items">
+          <div style="color:#4D644F;padding:0.5rem;margin:0 0 0 0;display:flex;justify-content:space-between;font-style: italic;font-weight:light;font-size:1.8rem;">
+            <h3 style="margin:0; font-weight: 100;">Garnish Tools</h3>
+            <h3 style="margin:0; font-weight: 100;">02</h3>
+          </div>
+          <p style="margin:0;padding:0.5rem;font-family: Overused Grotesk Regular;font-size: 0.8rem;">Skewers or toothpicks used to hold garnishes such as fruit, olivers, or cocktail onions</p>
+        </div>
       </div>
       <div class="row" style="display: grid;grid-template-columns: 50% 50%">
-        <div class="tools-items square"><div class="img" style="height: 100%;"></div></div>
+        <div class="tools-items hoverTools" onmouseenter="toolOver(0)" onmouseleave="toolOut(0)" style="display: flex;flex-direction: column;justify-content: space-between;">
+          <div style="border-bottom:solid 1px black;color:#4D644F;padding:0.5rem;margin:0 0 0 0;display:flex;justify-content:space-between;font-style: italic;font-weight:light;font-size:1.8rem;">
+            <h3 style="margin:0; font-weight: 100;">Cocktails Strainer</h3>
+            <h3 style="margin:0; font-weight: 100;">03</h3>
+          </div>
+          <div><img src="/images/tools/tools-18.png" alt=""></div>
+        </div>
         <div style="display: grid;grid-template-columns: 50% 50%">
-          <div class="square tools-items"><div class="img"></div></div>
-          <div class="square tools-items"><div class="img"></div></div>
-          <div class="square tools-items"><div class="img"></div></div>
-          <div class="square tools-items"><div class="img"></div></div>
+          <div class="tools-items"><img src="/images/tools/tools-19.png" alt=""></div>
+          <div class="tools-items">
+            <div style="color:#4D644F;padding:0.5rem;margin:0 0 0 0;display:flex;justify-content:space-between;font-style: italic;font-weight:light;font-size:1.8rem;">
+              <h3 style="margin:0; font-weight: 100;">Ice Scoop</h3>
+              <h3 style="margin:0; font-weight: 100;">04</h3>
+            </div>
+            <p style="margin:0;padding:0.5rem;font-family: Overused Grotesk Regular;font-size: 0.8rem;">Skewers or toothpicks used to hold garnishes such as fruit, olivers, or cocktail onions</p>
+          </div>
+          <div class="tools-items">
+            <div style="color:#4D644F;padding:0.5rem;margin:0 0 0 0;display:flex;justify-content:space-between;font-style: italic;font-weight:light;font-size:1.8rem;">
+              <h3 style="margin:0; font-weight: 100;">Garnish Tools</h3>
+              <h3 style="margin:0; font-weight: 100;">02</h3>
+            </div>
+            <p style="margin:0;padding:0.5rem;font-family: Overused Grotesk Regular;font-size: 0.8rem;">Skewers or toothpicks used to hold garnishes such as fruit, olivers, or cocktail onions</p>
+          </div>
+          <div class="tools-items"><img src="/images/tools/tools-20.png" alt=""></div>
         </div>
       </div>
       <div class="row" style="display: grid;grid-template-columns: 50% 25% 25%">
-        <div style="display: grid;grid-template-rows: 66% 33%">
+        <div style="display: grid;grid-template-rows: 66% 34%">
           <div style="display: grid;grid-template-columns: 50% 50%">
-            <div class="square tools-items"><div class="img"></div></div>
-            <div class="square tools-items"><div class="img"></div></div>
-            <div class="square tools-items"><div class="img"></div></div>
-            <div class="square tools-items"><div class="img"></div></div>
+            <div class="tools-items">
+              <div style="color:#4D644F;padding:0.5rem;margin:0 0 0 0;display:flex;justify-content:space-between;font-style: italic;font-weight:light;font-size:1.8rem;">
+                <h3 style="margin:0; font-weight: 100;">Ice Scoop</h3>
+                <h3 style="margin:0; font-weight: 100;">04</h3>
+              </div>
+              <p style="margin:0;padding:0.5rem;font-family: Overused Grotesk Regular;font-size: 0.8rem;">Skewers or toothpicks used to hold garnishes such as fruit, olivers, or cocktail onions</p>
+            </div>
+            <div class="tools-items"><img src="/images/tools/tools-21.png" alt=""></div>
+            <div class="tools-items"><img src="/images/tools/tools-22.png" alt=""></div>
+            <div class="tools-items">
+              <div style="color:#4D644F;padding:0.5rem;margin:0 0 0 0;display:flex;justify-content:space-between;font-style: italic;font-weight:light;font-size:1.8rem;">
+                <h3 style="margin:0; font-weight: 100;">Garnish Tools</h3>
+                <h3 style="margin:0; font-weight: 100;">02</h3>
+              </div>
+              <p style="margin:0;padding:0.5rem;font-family: Overused Grotesk Regular;font-size: 0.8rem;">Skewers or toothpicks used to hold garnishes such as fruit, olivers, or cocktail onions</p>
+            </div>
           </div>
-          <div class="square tools-items"><div class="img"></div></div>
+          <div class="tools-items">
+            <img src="/images/tools/tools-24.png" alt="" style=" width: 70%;display: block;margin:auto;">
+          </div>
         </div>
 
-        <div style="display: grid;grid-template-rows: 66% 33%">
-          <div class="square tools-items"><div class="img" style="height: 100%;"></div></div>
-          <div class="square tools-items"><div class="img"></div></div>
+        <div style="display: grid;grid-template-rows: 66% 34%">
+          <div class="tools-items hoverTools" onmouseenter="toolOver(1)" onmouseleave="toolOut(1)"  style="display: flex;flex-direction: column;justify-content: space-between;">
+            <div style="border-bottom:solid 1px black;color:#4D644F;padding:0.5rem;margin:0 0 0 0;display:flex;justify-content:space-between;font-style: italic;font-weight:light;font-size:1.8rem;">
+              <h3 style="margin:0; font-weight: 100;">Cocktails Strainer</h3>
+              <h3 style="margin:0; font-weight: 100;">03</h3>
+            </div>
+            <img src="/images/tools/tools-23.png" alt="" style="display: block;margin:auto;">
+          </div>
+          <div class="tools-items">
+            <div style="color:#4D644F;padding:0.5rem;margin:0 0 0 0;display:flex;justify-content:space-between;font-style: italic;font-weight:light;font-size:1.8rem;">
+              <h3 style="margin:0; font-weight: 100;">Garnish Tools</h3>
+              <h3 style="margin:0; font-weight: 100;">02</h3>
+            </div>
+            <p style="margin:0;padding:0.5rem;font-family: Overused Grotesk Regular;font-size: 0.8rem;">Skewers or toothpicks used to hold garnishes such as fruit, olivers, or cocktail onions</p>
+          </div>
         </div>
-        <div class="square tools-items"><div class="img" style="height: 100%;"></div></div>
+        <div class="tools-items hoverTools" onmouseenter="toolOver(2)" onmouseleave="toolOut(2)" style="display: flex;flex-direction: column;justify-content: space-between;">
+          <div style="border-bottom:solid 1px black;color:#4D644F;padding:0.5rem;margin:0 0 0 0;display:flex;justify-content:space-between;font-style: italic;font-weight:light;font-size:1.8rem;">
+            <h3 style="margin:0; font-weight: 100;">Cocktails Strainer</h3>
+            <h3 style="margin:0; font-weight: 100;">03</h3>
+          </div>
+          <img src="/images/tools/tools-25.png" alt="" style="display: block;margin:auto;">
+        </div>
 
       </div>
     </div>

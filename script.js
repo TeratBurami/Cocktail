@@ -1,20 +1,26 @@
 const menu = [
-    {name:'Irish coffee',type:'Irish Whiskey',price:"8.00-23.00$",image:"coffee.png"},
-    {name:'Manhattan',type:'Whiskey',price:"12.00-25.00$",image:"Manhattan.png"},
-    {name:'Bourbon Mojito',type:'Bourbon Whiskey',price:"7.00-15.00$",image:"Bourbon Mojito.png"},
-    {name:'Creamsicle Punch',type:'Vodka',price:"11.00-20.00$",image:"Creamsicle Punch.png"},
-    {name:'Moscow mule',type:'Vodka',price:"8.00-31.00$",image:"Moscow Mule.png"},
-    {name:'Green Dream',type:'Vodka',price:"7.00-19.00$",image:"Green Dream.png"},
-    {name:'EL diable',type:'Telquila',price:"11.00-35.00$",image:"EL diablo.png"},
-    {name:'Blue lagoon',type:'Telquila',price:"15.00-32.00$",image:"blue.png"},
-    {name:'Margarita',type:'Telquila',price:"12.00-28.00$",image:"Margarita.png"},
-    {name:'Classic gin and tonic',type:'Gin',price:"7.00-19.00$",image:"Classic Gin Tonic.png"},
-    {name:'Martini',type:'Gin',price:"11.00-31.00$",image:"Martini.png"},
-    {name:'Rum Nehroni',type:'Rum',price:"11.00-31.00$",image:"Rum Nehroni.png"},
-    {name:'Mojito',type:'Rum',price:"8.00-25.00$",image:"Mojito.png"},
-    {name:'Brandy sour',type:'Brandy',price:"8.00-25.00$",image:"Brandy Sour.png"},
-    {name:'French 95',type:'Brandy',price:"17.00-38.00$",image:"French 95.png"},
-    {name:'White russian',type:'Liqueur',price:"15.00-28.00$",image:"White Russian.png"}
+    {name:'Irish coffee',type:'Irish Whiskey',price:"8.00-23.00$",image:"coffee.png",sweet:3,tart:0,bitter:3,detail:'Smooth Irish whiskey blended with rich coffee, topped with velvety cream, creating a decadent and warming treat for any occasion.'},
+    {name:'Manhattan',type:'Whiskey',price:"12.00-25.00$",image:"Manhattan.png",sweet:1,tart:3,bitter:4,detail:'Rye whiskey, sweet vermouth, a dash of bitters, stirred to perfection, garnished with a cherry. Timeless sophistication in a glass.'},
+    {name:'Bourbon Mojito',type:'Bourbon Whiskey',price:"7.00-15.00$",image:"Bourbon Mojito.png",sweet:3,tart:4,bitter:0,detail:'A refreshing twist on the classic with bourbon, mint, lime, and soda, offering a flavorful burst of summer vibes.'},
+    {name:'Creamsicle Punch',type:'Vodka',price:"11.00-20.00$",image:"Creamsicle Punch.png",sweet:5,tart:3,bitter:0,detail:'A nostalgic blend of orange juice, vanilla vodka, soda, and cream, reminiscent of the classic frozen treat. Refreshingly creamy!'},
+    {name:'Moscow mule',type:'Vodka',price:"8.00-31.00$",image:"Moscow Mule.png",sweet:1,tart:1,bitter:4,detail:'Vodka, ginger beer, and lime juice served in a mug, delivering a zesty, effervescent, and timeless cocktail.'},
+    {name:'Green Dream',type:'Vodka',price:"7.00-19.00$",image:"Green Dream.png",sweet:1,tart:5,bitter:1,detail:'Vibrant and refreshing blend of Midori melon liqueur, sour mix, and fresh lime, delivering a sweet-tart flavor sensation.'},
+    {name:'EL diable',type:'Telquila',price:"11.00-35.00$",image:"EL diablo.png",sweet:3,tart:4,bitter:0,detail:'A spicy-sweet delight featuring tequila, ginger beer, lime, and crème de cassis, delivering a fiery and refreshing experience.'},
+    {name:'Blue lagoon',type:'Telquila',price:"15.00-32.00$",image:"blue.png",sweet:4,tart:3,bitter:2,detail:'A tropical escape with vodka, blue curaçao, and lemonade, garnished with a cherry. Refreshing, vibrant, and irresistibly exotic.'},
+    {name:'Margarita',type:'Telquila',price:"12.00-28.00$",image:"Margarita.png",sweet:1,tart:4,bitter:2,detail:'Smooth Irish whiskey blended with rich coffee, topped with velvety cream, creating a decadent and warming treat for any occasion.'},
+    {name:'Classic gin and tonic',type:'Gin',price:"7.00-19.00$",image:"Classic Gin Tonic.png",sweet:1,tart:3,bitter:3,detail:'Rye whiskey, sweet vermouth, a dash of bitters, stirred to perfection, garnished with a cherry. Timeless sophistication in a glass.'},
+    {name:'Martini',type:'Gin',price:"11.00-31.00$",image:"Martini.png",sweet:0,tart:2,bitter:3,detail:'A refreshing twist on the classic with bourbon, mint, lime, and soda, offering a flavorful burst of summer vibes.'},
+    {name:'Rum Nehroni',type:'Rum',price:"11.00-31.00$",image:"Rum Nehroni.png",sweet:2,tart:1,bitter:5,detail:'A nostalgic blend of orange juice, vanilla vodka, soda, and cream, reminiscent of the classic frozen treat. Refreshingly creamy!'},
+    {name:'Mojito',type:'Rum',price:"8.00-25.00$",image:"Mojito.png",sweet:3,tart:4,bitter:1,detail:'Vodka, ginger beer, and lime juice served in a mug, delivering a zesty, effervescent, and timeless cocktail.'},
+    {name:'Brandy sour',type:'Brandy',price:"8.00-25.00$",image:"Brandy Sour.png",sweet:2,tart:4,bitter:3,detail:'Vibrant and refreshing blend of Midori melon liqueur, sour mix, and fresh lime, delivering a sweet-tart flavor sensation.'},
+    {name:'French 95',type:'Brandy',price:"17.00-38.00$",image:"French 95.png",sweet:2,tart:2,bitter:4,detail:'A spicy-sweet delight featuring tequila, ginger beer, lime, and crème de cassis, delivering a fiery and refreshing experience.'},
+    {name:'White russian',type:'Liqueur',price:"15.00-28.00$",image:"White Russian.png",sweet:4,tart:0,bitter:2,detail:'A tropical escape with vodka, blue curaçao, and lemonade, garnished with a cherry. Refreshing, vibrant, and irresistibly exotic.'}
+]
+
+const tools=[
+    {name:'Cocktails Strainer',number:'03',detail:'Used to separate solid ingredients or ice from liquid when pouring a cocktail from a mixing glass or shaker into a serving glass. It prevents ice shards, fruit chunks, herbs, or other solid ingredients from entering the final drink.',type:['Boston shaker (two-piece),','cobbler shaker (three-piece),','or Parisian shaker (French-style).'],how:['Add ingredients to the shaker tin or glass.','Seal the shaker with the lid securely.','Hold with both hands and shake vigorously for 10-15 seconds','Strain the cocktail into a glass using a Hawthorne strainer or fine mesh strainer.']},
+    {name:'',number:'07',detail:'',type:'',how:''},
+    {name:'',number:'08',detail:'',type:'',how:''}
 ]
 
 const picture=[
@@ -97,35 +103,45 @@ const bottles=[
 
 ]
 
-var items
-for (let cocktail = 1; cocktail <= menu.length; cocktail++) {
-    const listItem = document.createElement('li')
-    listItem.innerHTML = `
-    <li onmouseover="menuOver(${cocktail})">
-        <div style="margin:0 0 0.5rem 1rem;display:flex;justify-content:space-between;font-style: italic;font-weight:light;font-size:2rem;color:#415E43">
-            <div>${menu[cocktail - 1].name}</div>
-            <div>${String((cocktail)).padStart(2, '0')}</div>
-        </div>
-        <p style="margin:0 0 0.5rem 1rem;background:#415E43;width:fit-content;padding:0.3rem 0.5rem 0.3rem 0.5rem;border-radius:5rem;color:white;font-family: 'Overused Grotesk Regular';">${menu[cocktail - 1].type}</p>
-        <p style="margin:0 0 0 1rem;font-family: 'Overused Grotesk Regular';">${menu[cocktail - 1].price}</p>
-        <img src="/images/menu/${menu[cocktail - 1].image}" style="object-fit:cover; width:100%">
-    </li>
-    ` 
-    listItem.setAttribute('class', 'list')
-    document.querySelector('.menu-items').appendChild(listItem)
+const levelBar=(data)=>{
+    let html=''
+    for(let i=0;i<5;i++){
+        i<data? html+='<div style="width:2rem; height:0.5rem; background:#FAF6EA;"></div>':html+='<div style="width:2rem; height:0.5rem; background:#8B9B86"></div>';
+    }
+    return '<div style="display:flex;gap:0.2rem">'+html+'</div>';
 }
 
-let menuHovering=document.getElementsByClassName('list')
+
 const menuOver=(index)=>{
-    //continue
+    let menuItem=document.querySelector(`#menuItem-${index}`)
+    let price_bar=document.querySelector(`#price-bar-${index}`)
+    price_bar.innerHTML=`
+        <div style="margin:1rem 0 0 0.5rem">
+            <p style="margin:0.3rem 0 0.3rem 0">Sweetness</p>
+            ${levelBar(menu[index].sweet)}
+            <p style="margin:0.3rem 0 0.3rem 0">Tart/Citrusy</p>
+            ${levelBar(menu[index].tart)}
+            <p style="margin:0.3rem 0 0.3rem 0">Bitter</p>
+            ${levelBar(menu[index].bitter)}
+        </div>
+    `
+    menuItem.lastElementChild.innerHTML=`
+        <p style="padding:1rem; font-family: Overused Grotesk Regular;">${menu[index].detail}</p>
+    `
 }
 
 const menuOut=(index)=>{
-    //continue
+    let menuItem=document.querySelector(`#menuItem-${index}`)
+    let price_bar=document.querySelector(`#price-bar-${index}`)
+    price_bar.innerHTML=`<p style="margin:1rem 0 0 0.5rem;font-family: Overused Grotesk Regular;">${menu[index].price}</p>`
+    menuItem.lastElementChild.innerHTML=`
+        <img src="/images/menu/${menu[index].image}" style="object-fit:cover; width:100%">
+    `
 }
 
-let droplist = document.createElement('div')
 
+
+let droplist = document.createElement('div')
 const list=document.getElementsByClassName('timeline-items')
 const mouseOver=(index)=>{
     droplist.innerHTML=`
@@ -152,10 +168,8 @@ const mouseOut=(index)=>{
     list[index].lastElementChild.firstElementChild.remove()
 }
 
-
 var page=0
 let bottleDisplay=document.getElementById('right-container');
-
 const changeSlide=()=>{
     bottleDisplay.innerHTML=`
     <button onclick="prevSlide()" style="cursor:pointer ;position: absolute; top: 30%; font-size: 2rem; background: none; border:none">&lt;</button>
@@ -191,8 +205,6 @@ const changeSlide=()=>{
     `
 }
 
-changeSlide()
-
 const nextSlide=()=>{
     if(page<2){
         page+=1
@@ -207,4 +219,42 @@ const prevSlide=()=>{
     }
 }
 
+const toolOver=(index)=>{
+    e.innerHTML=`
 
+    `
+}
+
+const toolOut=(index)=>{
+    let hoverTools=document.querySelector('.hoverTools')
+    hoverTools[index].innerHTML=`
+        
+    `
+}
+
+
+
+changeSlide()
+
+var items
+let menuList=document.getElementsByClassName('menu-list')
+
+for (let cocktail = 0; cocktail <= menuList.length; cocktail++) {
+    menuList[cocktail].innerHTML = `
+    <div id="menuItem-${cocktail}" style="height:100%;display:flex;flex-direction:column; justify-content:space-between">
+        <div>
+            <div style="margin:0 0 0.5rem 1rem;display:flex;justify-content:space-between;font-style: italic;font-weight:light;font-size:1.5rem;">
+                <div>${menu[cocktail].name}</div>
+                <div>${String((cocktail+1)).padStart(2, '0')}</div>
+            </div>
+            <p style="margin:0 0 0.5rem 0.5rem;background:#415E43;width:fit-content;padding:0.3rem 0.8rem 0.3rem 0.8rem;border-radius:5rem;color:white;font-family: 'Overused Grotesk Regular';border:solid 1px #FAF6EA; font-size:0.8rem">${menu[cocktail].type}</p>
+            <div id="price-bar-${cocktail}">
+                <p style="margin:1rem 0 0 0.5rem;font-family: 'Overused Grotesk Regular';">${menu[cocktail].price}</p>
+            </div>
+        </div>
+        <div>
+            <img src="/images/menu/${menu[cocktail].image}" style="object-fit:cover; width:100%">
+        </div>
+    </div>
+    ` 
+}
