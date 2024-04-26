@@ -23,39 +23,17 @@ const tools=[
     {name:'Bar Spoon',number:'08',detail:'A specialized spoon used in cocktail making, typically longer than a regular spoon. It usually measures around 10 to 12 inches in length, with a twisted handle and a small bowl at the end.',type:'',how:['To mix cocktails directly in the glass, ensuring even distribution of ingredients and flavors.','They\'re also used for layering drinks, where different liquids are carefully poured over one another to create visually appealing and layered cocktails.','Simply hold the spoon by its handle and insert it into the cocktail glass, then gently stir or layer as desired, using a smooth and controlled motion.'],image:'tools-25.png'}
 ]
 
-const picture=[
-    ['pre1.jpg','pre2.jpg'],
-    ['dawn1.jpg','dawn2.jpg'],
-    ['gold1.jpg','gold2.jpg'],
-    ['american1.jpg','american2.jpg'],
-    ['',''],
-    ['','darkage.jpg'],
-    ['redis1.jpg','redis2.jpg'],
-    ['revival1.jpg','revival2.jpg'],
+const starters=[
+    {topic:'First mention of the word \"cock-tail\"',detail:'It was in the decades and centuries prior to 1800 that the artform of the Mixed Drink was evolving. Instead of recipes for individual drinks, the pattern was to created mixed drink "categories".',image:['pre1.jpg','pre2.jpg']},
+    {topic:'\"cocktail\" first appearing in print in 1803',detail:'The cocktail comes onto the scene in the beginning of the 1800\'s and very gradually begins to get noticed. The concept of "mixed drink categories" was still prevalent, but over time would lose its luster.',image:['dawn1.jpg','dawn2.jpg']},
+    {topic:'From a Printed Definition to a Forbidden Fruit',detail:'Entering into this era, the cocktail is still just "yet another" mixed drink category, which isn\'t necessarily seen as being any more important than the others, but that changes quickly. ',image:['gold1.jpg','gold2.jpg']},
+    {topic:'Prohibition Doesn\'t Mean No One is Drinking it',detail:'The "Great Cocktail Lobotomy" descends upon the US. During this decade the art and craft of the cocktail is all but forgotten, in the US anyway. Many American bartenders go to Europe where they can continue serving cocktails.',image:['american1.jpg','american2.jpg']},
+    {topic:'Witnessed a cocktail revival, with Tiki and the Martini competing',detail:'With Prohibition over, the general public attempted to reestablish their pursuits of the well-turned drink, but too much had been forgotten, and too many bad habits had been formed. The birth of Tiki almost reminds us of the craft of the cocktail, but it eventually becomes a façade of itself. Renewed interest in the Martini tries to remind us of what we had forgotten, but the Vodka Martini turns it into little more than an alcohol delivery vehicle.',image:['','']},
+    {topic:'\"Moonwalk\" cocktail in honor of the Apollo 11',detail:'The cocktail turns comical. Many eschew cocktails since they see them as "what their parents used to drink", and those who eventually do partake, favor the syrupy sweet beverages which remind them of their childhood.',image:['','darkage.jpg']},
+    {topic:'A resurgence of interest in classic cocktails',detail:'The decade leading up to 2000 saw a slowly growing interest in rediscovering the cocktail. There was a small, but dedicated group of individuals who began to dig into the long forgotten cocktailian craft as it existed prior to Prohibition and would set the stage for giving the cocktail a greater exposure.',image:['redis1.jpg','redis2.jpg']},
+    {topic:'The innovations of cocktails',detail:'In the early 2000s, Milk & Honey and Zig Zag Café kicked off the craft cocktail movement. Events like "A Tribute to Professor Jerry Thomas" and the founding of Tales of the Cocktail showcased cocktail culture\'s rise. The Museum of the American Cocktail and Regans\' Orange Bitters #6 added to the momentum. By 2014, cocktail trends were mapped through Estately Blog\'s state-by-state rankings.',image:['revival1.jpg','revival2.jpg']}
 ]
 
-const topic=[
-    'First mention of the word \"cock-tail\"',
-    '\"cocktail\" first appearing in print in 1803',
-    'From a Printed Definition to a Forbidden Fruit',
-    'Prohibition Doesn\'t Mean No One is Drinking it',
-    'Witnessed a cocktail revival, with Tiki and the Martini competing',
-    '\"Moonwalk\" cocktail in honor of the Apollo 11',
-    'A resurgence of interest in classic cocktails',
-    'The innovations of cocktails'
-]
-
-const text=[
-    'It was in the decades and centuries prior to 1800 that the artform of the Mixed Drink was evolving. Instead of recipes for individual drinks, the pattern was to created mixed drink "categories".',
-    'The cocktail comes onto the scene in the beginning of the 1800\'s and very gradually begins to get noticed. The concept of "mixed drink categories" was still prevalent, but over time would lose its luster.',
-    'Entering into this era, the cocktail is still just "yet another" mixed drink category, which isn\'t necessarily seen as being any more important than the others, but that changes quickly. ',
-    'The "Great Cocktail Lobotomy" descends upon the US. During this decade the art and craft of the cocktail is all but forgotten, in the US anyway. Many American bartenders go to Europe where they can continue serving cocktails.',
-    'With Prohibition over, the general public attempted to reestablish their pursuits of the well-turned drink, but too much had been forgotten, and too many bad habits had been formed. The birth of Tiki almost reminds us of the craft of the cocktail, but it eventually becomes a façade of itself. Renewed interest in the Martini tries to remind us of what we had forgotten, but the Vodka Martini turns it into little more than an alcohol delivery vehicle.',
-    'The cocktail turns comical. Many eschew cocktails since they see them as "what their parents used to drink", and those who eventually do partake, favor the syrupy sweet beverages which remind them of their childhood. ',
-    'The decade leading up to 2000 saw a slowly growing interest in rediscovering the cocktail. There was a small, but dedicated group of individuals who began to dig into the long forgotten cocktailian craft as it existed prior to Prohibition and would set the stage for giving the cocktail a greater exposure.',
-    'In the early 2000s, Milk & Honey and Zig Zag Café kicked off the craft cocktail movement. Events like "A Tribute to Professor Jerry Thomas" and the founding of Tales of the Cocktail showcased cocktail culture\'s rise. The Museum of the American Cocktail and Regans\' Orange Bitters #6 added to the momentum. By 2014, cocktail trends were mapped through Estately Blog\'s state-by-state rankings.'
-
-]
 
 const bottles=[
     [{
@@ -155,12 +133,12 @@ const mouseOver=(index)=>{
     droplist.innerHTML=`
     <div style="animation:fade 1s;padding:0.5rem 2rem 0.5rem 2rem; display:flex; justify-content:between; gap:2rem">
         <div style="display:flex; flex-direction:column; justify-content:space-between;">
-            <h3 style="font-size:2rem;font-family: 'Overused Grotesk Regular';">${topic[index]}</h3>
-            <p style="font-size:1rem;font-family: 'Overused Grotesk Regular';">${text[index]}</p>
+            <h3 style="font-size:2rem;font-family: 'Overused Grotesk Regular';">${starters[index].topic}</h3>
+            <p style="font-size:1rem;font-family: 'Overused Grotesk Regular';">${starters[index].detail}</p>
         </div>
         <div style="display:grid;grid-template-columns: 50% 50%; gap:2rem; margin:auto">
-            ${picture[index][0]? `<img src="images/timeline/${picture[index][0]}" style="width:16rem;height:10rem;object-fit:cover;border-radius:0.5rem">`:''}
-            ${picture[index][1]? `<img src="images/timeline/${picture[index][1]}" style="width:16rem;height:10rem;object-fit:cover;border-radius:0.5rem">`:''}
+            ${starters[index].image[0]? `<img src="images/timeline/${starters[index].image[0]}" style="width:16rem;height:10rem;object-fit:cover;border-radius:0.5rem">`:''}
+            ${starters[index].image[1]? `<img src="images/timeline/${starters[index].image[1]}" style="width:16rem;height:10rem;object-fit:cover;border-radius:0.5rem">`:''}
         </div>
     </div>
     `
@@ -268,13 +246,47 @@ const toolOut=(index)=>{
     `
 }
 
+const disableEvent=(element)=>{
+    let items=document.getElementsByClassName(element)
+    for(let i=0;i<items.length;i++){
+        items[i].removeAttribute('onmouseenter')
+        items[i].removeAttribute('onmouseleave')
+    }
+}
+
+const enableEvent=(element,value)=>{
+    let items=document.getElementsByClassName(element)
+    for(let i=0;i<items.length;i++){
+        items[i].setAttribute('onmouseenter',value+`Over(${i})`)
+        items[i].setAttribute('onmouseleave',value+`Out(${i})`)
+    }
+}
+
+const timelineMobile=()=>{
+    let items=document.getElementsByClassName('timeline-items')
+    for(let index=0;index<items.length;index++){
+        let info=document.createElement('div')
+        info.innerHTML=`
+            <div style="background:#415E43; padding:1rem;">
+                <h3 style="color:#FAF6EA;font-size:5vw;font-family: 'Overused Grotesk Regular';">${starters[index].topic}</h3>
+                <img src="images/timeline/${starters[index].image[0]}" style="width:100%;height:auto;object-fit:cover;border-radius:0.5rem;display:block;margin:0 auto 0 auto">
+                <p style="color:#FAF6EA;font-size:3vw;font-family: 'Overused Grotesk Regular';">${starters[index].detail}</p>
+            </div>
+        `
+
+        items[index].lastElementChild.appendChild(info)
+    } 
+}
 
 
 function responsive(mobile) {
     if (mobile.matches) {
         document.getElementById('banner').src='/images/banner_mobile.svg'
+        disableEvent('timeline-items')
+        timelineMobile()
     } else {
         document.getElementById('banner').src='/images/banner_pic.svg'
+        enableEvent('timeline-items','mouse')
     }
   }
   
