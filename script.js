@@ -144,15 +144,13 @@ let droplist = document.createElement('div')
 const list=document.getElementsByClassName('timeline-items')
 const mouseOver=(index)=>{
     droplist.innerHTML=`
-    <div style="animation:fade 1s;padding:0.5rem 2rem 0.5rem 2rem; display:flex; justify-content:between; gap:2rem">
+    <div style="animation:fade 1s;padding:1rem; display:grid; grid-template-columns:40% 30% 30%;justify-content:evenly;  gap:2rem; width:100%">
         <div style="display:flex; flex-direction:column; justify-content:space-between;">
-            <h3 style="font-size:2rem;font-family: 'Overused Grotesk Regular';">${starters[index].topic}</h3>
-            <p style="font-size:1rem;font-family: 'Overused Grotesk Regular';">${starters[index].detail}</p>
+            <h3 style="font-size:2rem;font-family: 'Overused Grotesk Regular'; margin:0; font-weight:100">${starters[index].topic}</h3>
+            <p style="font-size:1rem;font-family: 'Overused Grotesk Regular'; margin:0;">${starters[index].detail}</p>
         </div>
-        <div style="display:grid;grid-template-columns: 50% 50%; gap:2rem; margin:auto">
-            ${starters[index].image[0]? `<img src="images/timeline/${starters[index].image[0]}" style="width:16rem;height:10rem;object-fit:cover;border-radius:0.5rem">`:''}
-            ${starters[index].image[1]? `<img src="images/timeline/${starters[index].image[1]}" style="width:16rem;height:10rem;object-fit:cover;border-radius:0.5rem">`:''}
-        </div>
+        <div>${starters[index].image[0]? `<img src="images/timeline/${starters[index].image[0]}" style="float:right;width:25rem;height:12rem;object-fit:cover;border-radius:0.5rem">`:''}</div>
+        ${starters[index].image[1]? `<img src="images/timeline/${starters[index].image[1]}" style="width:25rem;height:12rem;object-fit:cover;border-radius:0.5rem">`:''}
     </div>
     `
 
@@ -173,7 +171,7 @@ const changeSlide=()=>{
     bottleDisplay.innerHTML=`
     <button onclick="prevSlide()" style="cursor:pointer ;position: absolute; top: 30%; font-size: 2rem; background: none; border:none">&lt;</button>
     <button onclick="nextSlide()" style="cursor:pointer ;position: absolute; left:95%; top: 30%; font-size: 2rem; background: none; border:none">&gt;</button>
-    <div style="animation:fade 0.5s; border-left: solid 1px black;">
+    <div style="animation:fade 0.5s; ${mobile.matches? '':'border-left: solid 1px black;'}">
         <div style="margin:1rem 2rem 0 0;float:right;background:#415E43; border-radius:5rem;padding:0rem 1rem 0rem 1rem; width:fit-content">
             <h3 style="font-size:1.2rem;margin:0;text-align:center;font-family: Overused Grotesk Light;color:white;">${bottles[page][0].percent}</h3>
             <p style="font-size:0.6rem;color:white;margin:0 0 0.3rem 0;font-family: Overused Grotesk Light;">Concentration of Alcohol</p>
@@ -253,7 +251,7 @@ const toolOut=(index)=>{
             <h3 style="margin:0; font-weight: 100;">${tools[index].name}</h3>
             <h3 style="margin:0; font-weight: 100;">${tools[index].number}</h3>
         </div>
-        <img class="img" src="/images/tools/${tools[index].image}" alt="" style="object-fit:cover">
+        <img class="img" src="/images/tools/${tools[index].image}" alt="" style="object-fit:cover;scale:80%">
     `
 }
 
@@ -300,7 +298,7 @@ const createMenu=()=>{
                         <div>${String((cocktail+1)).padStart(2, '0')}</div>
                     </div>
                     <p>${menu[cocktail].type}</p>
-                    <div id="price-bar-${cocktail}">
+                    <div id="price-bar-${cocktail}" class="priceMenu">
                         <p>${menu[cocktail].price}</p>
                     </div>
                 </div>
@@ -325,6 +323,7 @@ const menuMobile=()=>{
             <p style="margin:0.3rem 0 0.3rem 0; color:#FAF6EA;font-family: 'Overused Grotesk Regular';">Bitter</p>
             ${levelBar(menu[index].bitter,2.5)}
         `
+
     }
 }
 
@@ -372,6 +371,25 @@ function responsive(mobile) {
         menuMobile()
         toolMobile()
         document.getElementById('footer-image').src='/images/footer/mobile.png'
+        let starterMobile=document.getElementsByClassName('starter-text')
+        {
+            for(let i=0;i<2;i++){
+                starterMobile[i].firstElementChild.remove()
+                if(i==0){
+                    starterMobile[i].lastElementChild.innerText='Cocktail Starters is the principal ingredient of the cocktail.'
+                }
+                else{
+                    starterMobile[i].lastElementChild.innerText='Choose your Starter Choices wisely! Play safe or be Experimental?'
+                }
+                starterMobile[i].lastElementChild.style.fontSize='4vw'
+                starterMobile[i].lastElementChild.style.marginTop='2rem'
+            }
+        }
+        let price=document.getElementsByClassName('priceMenu')
+        for(let i=0;i<price.length;i++){
+            price[i].style.paddingLeft='0.5rem'
+            price[i].style.fontSize='2.5vw'
+        }
     } else {
         document.getElementById('banner').src='/images/banner_pic.svg'
         enableEvent('timeline-items','mouse')

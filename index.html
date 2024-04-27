@@ -12,28 +12,32 @@
   <body>
     <!-- nav -->
     <nav>
-            <p id="nav-items" style="font-family: Space Grotesk, sans-serif; font-size: 1.5rem; margin:0;">COCKTAILS</p>
-            <ul class="nav-buttons">
-                <li class="button" style="font-family: Space Grotesk, sans-serif;"><a href="#timeline">Timeline</a></li>
-                <li class="button" style="font-family: Space Grotesk, sans-serif;"><a href="#starter">Starter</a></li>
-                <li class="button" style="font-family: Space Grotesk, sans-serif;"><a href="#menu">Menu</a></li>
-                <li class="button" style="font-family: Space Grotesk, sans-serif;"><a href="#tools">Tools</a></li>
-            </ul>
+            <div id="nav-items">
+              <p style="font-family: Space Grotesk, sans-serif; font-size: 1.5rem; margin:0;">COCKTAILS</p>
+            </div>
+            <div id="nav-button-con">
+              <ul class="nav-buttons">
+                  <li class="button" style="font-family: Space Grotesk, sans-serif;"><a href="#timeline">Timeline</a></li>
+                  <li class="button" style="font-family: Space Grotesk, sans-serif;"><a href="#starter">Starter</a></li>
+                  <li class="button" style="font-family: Space Grotesk, sans-serif;"><a href="#menu">Menu</a></li>
+                  <li class="button" style="font-family: Space Grotesk, sans-serif;"><a href="#tools">Tools</a></li>
+              </ul>
+            </div>
     </nav>
 
     <!-- banner -->
     <div class="banner">
       <div class="text" style="margin: 0; ">
-        <img id="cocktail-banner" src="images/cocktales.svg" alt="">
+        <div id="cocktail-banner"><img src="images/cocktales.svg" alt="" style="width: 100%; height: auto;"></div>
         <p id="shakeit" style="text-align: center;margin: 0;font-family: 'Overused Grotesk Regular';font-weight: bold; font-size: 3vw;">Shake it ‘til you make it</p>
-        <img src="images/banner-drink.svg" alt="" style="width:100%;margin-top: 10%;">
+        <div id="banner-drink"><img src="images/banner-drink.svg" alt="" style="width:100%;margin-top: 10%;"></div>
       </div>
       <img src="images/banner_pic.svg" alt="" style="width: 100%; float: right; " id="banner">
     </div>
 
     <!-- timeline -->
     <div class="timeline-container" id="timeline">
-      <h1>Timeline</h1>
+      <h1 class="topic">Timeline</h1>
       <ul class="timeline-list">
         <li class="timeline-items" onmouseenter="mouseOver(0)" onmouseleave="mouseOut(0)">
           <div class="item">
@@ -96,13 +100,13 @@
 
     <!-- starter -->
     <div class="starter" id="starter">
-      <h1>Starter</h1>
+      <h1 class="topic">Starter</h1>
       <div class="starter-container">
         <div class="left-container">
           <div class="starter-left-items">
             <img src="/images/starter/hand_bottle.svg" alt="" style="width: 50%;">
             <div style="display: flex; flex-direction: column; align-items: center;">
-              <div class="text" style="margin-right: 2rem;">
+              <div class="text starter-text" style="margin-right: 2rem;">
                 <h3 style="margin-bottom:0.5rem ;font-size: 2rem; font-family: 'Overused Grotesk Light';">Cocktail Starters</h3>
                 <p style="margin:0 ;font-family: 'Overused Grotesk Light'; font-size: 0.8rem;">The starter is the principal ingredient of the cocktail. It is typically a single spirit such as rum, gin, or whiskey, and typically makes up to 75 percent or more of the total volume of the cocktail before icing.</p>
               </div>
@@ -112,12 +116,12 @@
           <div class="starter-left-items">
             <div style="display: flex; flex-direction: column; align-items: center;">
               <img src="/images/starter/down_vector.svg" alt="" style="width: 30%; align-items: center;">
-              <div class="text" style="margin-left: 2rem;">
+              <div class="text starter-text" style="margin-left: 2rem;">
                 <h3 style="margin-bottom:0.5rem ;font-size: 2rem; font-family: 'Overused Grotesk Light';">Starter Choices</h3>
                 <p style="margin:0 ;font-family: 'Overused Grotesk Light'; font-size: 0.8rem;">Choose your starter wisely! Whether you love a cocktail is primarily decided by two factors: the starter and the flavors so it's good to play safe with one and experiment with the other. Different starters are enhanced by different flavors, so this acts as a good first step to narrowing down the flavor choices that you can experiment with.</p>
               </div>
             </div>
-            <img src="/images/starter/hand_glass.svg" alt="" style="width: 50%;margin-bottom: 5rem;">
+            <img src="/images/starter/hand_glass.svg" alt="" style="width: 50%;margin-bottom: 3rem;">
           </div>
         </div>
         <div id="right-container" style="display: grid; grid-template-columns: 50% 50%; position: relative;">
@@ -127,75 +131,43 @@
 
     <!-- menu -->
     <div class="menu-container" id="menu">
-      <h1>Menu</h1>
+      <h1 class="topic">Menu</h1>
       <ul class="menu-items">
-        <li class="menu-list" onmouseenter="menuOver(0)" onmouseleave="menuOut(0)">
-          <div></div>
-        </li>
-        <li class="menu-list" onmouseenter="menuOver(1)" onmouseleave="menuOut(1)">
-          <div></div>
-        </li>
-        <li class="menu-list" onmouseenter="menuOver(2)" onmouseleave="menuOut(2)">
-          <div></div>
-        </li>
-        <li class="menu-list" onmouseenter="menuOver(3)" onmouseleave="menuOut(3)">
-          <div></div>
-        </li>
-        <li class="menu-list" onmouseenter="menuOver(4)" onmouseleave="menuOut(4)">
-          <div></div>
-        </li>
-        <li class="menu-list" onmouseenter="menuOver(5)" onmouseleave="menuOut(5)" >
-          <div></div>
-        </li>
-        <li class="menu-list" onmouseenter="menuOver(6)" onmouseleave="menuOut(6)">
-          <div></div>
-        </li>
-        <li class="menu-list" onmouseenter="menuOver(7)" onmouseleave="menuOut(7)">
-          <div></div>
-        </li>
-        <li class="menu-list" onmouseenter="menuOver(8)" onmouseleave="menuOut(8)">
-          <div></div>
-        </li>
-        <li class="menu-list" onmouseenter="menuOver(9)" onmouseleave="menuOut(9)">
-          <div></div>
-        </li>
-        <li class="menu-list" onmouseenter="menuOver(10)" onmouseleave="menuOut(10)">
-          <div></div>
-        </li>
-        <li class="menu-list" onmouseenter="menuOver(11)" onmouseleave="menuOut(11)">
-          <div></div>
-        </li>
-        <li class="menu-list" onmouseenter="menuOver(12)" onmouseleave="menuOut(12)">
-          <div></div>
-        </li>
-        <li class="menu-list" onmouseenter="menuOver(13)" onmouseleave="menuOut(13)">
-          <div></div>
-        </li>
-        <li class="menu-list" onmouseenter="menuOver(14)" onmouseleave="menuOut(14)">
-          <div></div>
-        </li>
-        <li class="menu-list" onmouseenter="menuOver(15)" onmouseleave="menuOut(15)">
-          <div></div>
-        </li>
+        <li class="menu-list" onmouseenter="menuOver(0)" onmouseleave="menuOut(0)"></li>
+        <li class="menu-list" onmouseenter="menuOver(1)" onmouseleave="menuOut(1)"></li>
+        <li class="menu-list" onmouseenter="menuOver(2)" onmouseleave="menuOut(2)"></li>
+        <li class="menu-list" onmouseenter="menuOver(3)" onmouseleave="menuOut(3)"></li>
+        <li class="menu-list" onmouseenter="menuOver(4)" onmouseleave="menuOut(4)"></li>
+        <li class="menu-list" onmouseenter="menuOver(5)" onmouseleave="menuOut(5)" ></li>
+        <li class="menu-list" onmouseenter="menuOver(6)" onmouseleave="menuOut(6)"></li>
+        <li class="menu-list" onmouseenter="menuOver(7)" onmouseleave="menuOut(7)"></li>
+        <li class="menu-list" onmouseenter="menuOver(8)" onmouseleave="menuOut(8)"></li>
+        <li class="menu-list" onmouseenter="menuOver(9)" onmouseleave="menuOut(9)"></li>
+        <li class="menu-list" onmouseenter="menuOver(10)" onmouseleave="menuOut(10)"></li>
+        <li class="menu-list" onmouseenter="menuOver(11)" onmouseleave="menuOut(11)"></li>
+        <li class="menu-list" onmouseenter="menuOver(12)" onmouseleave="menuOut(12)"></li>
+        <li class="menu-list" onmouseenter="menuOver(13)" onmouseleave="menuOut(13)"></li>
+        <li class="menu-list" onmouseenter="menuOver(14)" onmouseleave="menuOut(14)"></li>
+        <li class="menu-list" onmouseenter="menuOver(15)" onmouseleave="menuOut(15)"></li>
       </ul>
     </div>
   </body>
 
   <!-- tools -->
   <div class="tools-container" id="tools">
-    <h1>TOOLS</h1>
+    <h1 class="topic">TOOLS</h1>
     <div class="grid" id="grid">
       <div class="row" style="display: grid;grid-template-columns: 25% 25% 25% 25%;">
-        <div class="tools-items"><img class="img" src="images/tools/tools-16.png" alt=""></div>
-        <div class="tools-items">
+        <div class="tools-items" style="border-width: 1px 0 1px 1px"><img class="img" src="images/tools/tools-16.png" alt=""></div>
+        <div class="tools-items" style="border-width: 1px 0 1px 1px">
           <div style="color:#4D644F;padding:0.5rem;margin:0 0 0 0;display:flex;justify-content:space-between;font-style: italic;font-weight:light;font-size:1.8rem;">
             <h3 style="margin:0; font-weight: 100;">Bar Strainer</h3>
             <h3 style="margin:0; font-weight: 100;">01</h3>
           </div>
           <p style="margin:0;padding:0.5rem;font-family: Overused Grotesk Regular;font-size: 0.8rem;">Used for straining cocktails that are stirred or built directly in the serving glass.</p>
         </div>
-        <div class="tools-items"><img class="img" src="images/tools/tools-17.png" alt=""></div>
-        <div class="tools-items">
+        <div class="tools-items" style="border-width: 1px 0 1px 1px"><img class="img" src="images/tools/tools-17.png" alt=""></div>
+        <div class="tools-items" style="border-width: 1px">
           <div style="color:#4D644F;padding:0.5rem;margin:0 0 0 0;display:flex;justify-content:space-between;font-style: italic;font-weight:light;font-size:1.8rem;">
             <h3 style="margin:0; font-weight: 100;">Garnish Tools</h3>
             <h3 style="margin:0; font-weight: 100;">02</h3>
@@ -204,28 +176,28 @@
         </div>
       </div>
       <div class="row" style="display: grid;grid-template-columns: 50% 50%">
-        <div class="tools-items hoverTools" onmouseenter="toolOver(0)" onmouseleave="toolOut(0)" style="display: flex;flex-direction: column;justify-content: space-between;">
+        <div class="tools-items hoverTools" onmouseenter="toolOver(0)" onmouseleave="toolOut(0)" style="display: flex;flex-direction: column;justify-content: space-between; border-width: 0 0 1px 1px">
           <div style="border-bottom:solid 1px black;color:#4D644F;padding:1rem;margin:0 0 0 0;display:flex;justify-content:space-between;font-style: italic;font-weight:light;font-size:1.8rem;">
             <h3 style="margin:0; font-weight: 100;">Cocktails Strainer</h3>
             <h3 style="margin:0; font-weight: 100;">03</h3>
           </div>
-          <img class="img" src="/images/tools/tools-18.png" alt="">
+          <img class="img" src="/images/tools/tools-18.png" alt="" style="scale:80%">
         </div>
         <div style="display: grid;grid-template-columns: 50% 50%">
-          <div class="tools-items"><img class="img" src="/images/tools/tools-19.png" alt=""></div>
-          <div class="tools-items">
+          <div class="tools-items" style="border-width: 0 0 1px 1px"><img class="img" src="/images/tools/tools-19.png" alt="" ></div>
+          <div class="tools-items" style="border-width: 0 1px 1px 1px">
             <div style="color:#4D644F;padding:0.5rem;margin:0 0 0 0;display:flex;justify-content:space-between;font-style: italic;font-weight:light;font-size:1.8rem;">
               <h3 style="margin:0; font-weight: 100;">Ice Scoop</h3>
               <h3 style="margin:0; font-weight: 100;">04</h3>
             </div>
-            <p style="margin:0;padding:0.5rem;font-family: Overused Grotesk Regular;font-size: 0.8rem;">Skewers or toothpicks used to hold garnishes such as fruit, olivers, or cocktail onions</p>
+            <p style="margin:0;padding:0.5rem;font-family: Overused Grotesk Regular;font-size: 0.8rem;">Used to add ice to cocktails without touching it with hands, maintaining cleanliness and hygiene.</p>
           </div>
-          <div class="tools-items">
+          <div class="tools-items" style="border-width: 0 0 1px 1px">
             <div style="color:#4D644F;padding:0.5rem;margin:0 0 0 0;display:flex;justify-content:space-between;font-style: italic;font-weight:light;font-size:1.8rem;">
-              <h3 style="margin:0; font-weight: 100;">Garnish Tools</h3>
-              <h3 style="margin:0; font-weight: 100;">02</h3>
+              <h3 style="margin:0; font-weight: 100;">Citrus Juicer</h3>
+              <h3 style="margin:0; font-weight: 100;">05</h3>
             </div>
-            <p style="margin:0;padding:0.5rem;font-family: Overused Grotesk Regular;font-size: 0.8rem;">Skewers or toothpicks used to hold garnishes such as fruit, olivers, or cocktail onions</p>
+            <p style="margin:0;padding:0.5rem;font-family: Overused Grotesk Regular;font-size: 0.8rem;">Manual or electric tool used to extract juice from citrus fruits such as lemons and limes.</p>
           </div>
           <div class="tools-items"><img class="img" src="/images/tools/tools-20.png" alt=""></div>
         </div>
@@ -235,17 +207,17 @@
           <div style="display: grid;grid-template-columns: 50% 50%">
             <div class="tools-items">
               <div style="color:#4D644F;padding:0.5rem;margin:0 0 0 0;display:flex;justify-content:space-between;font-style: italic;font-weight:light;font-size:1.8rem;">
-                <h3 style="margin:0; font-weight: 100;">Ice Scoop</h3>
-                <h3 style="margin:0; font-weight: 100;">04</h3>
+                <h3 style="margin:0; font-weight: 100;">Strainer</h3>
+                <h3 style="margin:0; font-weight: 100;">06</h3>
               </div>
-              <p style="margin:0;padding:0.5rem;font-family: Overused Grotesk Regular;font-size: 0.8rem;">Skewers or toothpicks used to hold garnishes such as fruit, olivers, or cocktail onions</p>
+              <p style="margin:0;padding:0.5rem;font-family: Overused Grotesk Regular;font-size: 0.8rem;">Its over the mouth of a shaker tin to strain out ice and solid ingredients.</p>
             </div>
             <div class="tools-items"><img class="img" src="/images/tools/tools-21.png" alt=""></div>
             <div class="tools-items"><img class="img" src="/images/tools/tools-22.png" alt=""></div>
             <div class="tools-items">
               <div style="color:#4D644F;padding:0.5rem;margin:0 0 0 0;display:flex;justify-content:space-between;font-style: italic;font-weight:light;font-size:1.8rem;">
                 <h3 style="margin:0; font-weight: 100;">Garnish Tools</h3>
-                <h3 style="margin:0; font-weight: 100;">02</h3>
+                <h3 style="margin:0; font-weight: 100;">09</h3>
               </div>
               <p style="margin:0;padding:0.5rem;font-family: Overused Grotesk Regular;font-size: 0.8rem;">Skewers or toothpicks used to hold garnishes such as fruit, olivers, or cocktail onions</p>
             </div>
@@ -257,26 +229,26 @@
 
         <div style="display: grid;grid-template-rows: 66% 34%">
           <div class="tools-items hoverTools" onmouseenter="toolOver(1)" onmouseleave="toolOut(1)"  style="display: flex;flex-direction: column;justify-content: space-between;">
-            <div style="border-bottom:solid 1px black;color:#4D644F;padding:0.5rem;margin:0 0 0 0;display:flex;justify-content:space-between;font-style: italic;font-weight:light;font-size:1.8rem;">
-              <h3 style="margin:0; font-weight: 100;">Cocktails Strainer</h3>
-              <h3 style="margin:0; font-weight: 100;">03</h3>
+            <div style="border-bottom:solid 1px black;color:#4D644F;padding:1rem;margin:0 0 0 0;display:flex;justify-content:space-between;font-style: italic;font-weight:light;font-size:1.8rem;">
+              <h3 style="margin:0; font-weight: 100;">Muddler</h3>
+              <h3 style="margin:0; font-weight: 100;">07</h3>
             </div>
-            <img class="img" src="/images/tools/tools-23.png" alt="" style="display: block;margin:auto;">
+            <img class="img" src="/images/tools/tools-23.png" alt="" style="display: block;margin:auto; scale:80%">
           </div>
           <div class="tools-items">
             <div style="color:#4D644F;padding:0.5rem;margin:0 0 0 0;display:flex;justify-content:space-between;font-style: italic;font-weight:light;font-size:1.8rem;">
               <h3 style="margin:0; font-weight: 100;">Garnish Tools</h3>
-              <h3 style="margin:0; font-weight: 100;">02</h3>
+              <h3 style="margin:0; font-weight: 100;">10</h3>
             </div>
-            <p style="margin:0;padding:0.5rem;font-family: Overused Grotesk Regular;font-size: 0.8rem;">Skewers or toothpicks used to hold garnishes such as fruit, olivers, or cocktail onions</p>
+            <p style="margin:0;padding:0.5rem;font-family: Overused Grotesk Regular;font-size: 0.8rem;">Used for crushing ice cubes into smaller, more manageable pieces for cocktails.</p>
           </div>
         </div>
         <div class="tools-items hoverTools" onmouseenter="toolOver(2)" onmouseleave="toolOut(2)" style="display: flex;flex-direction: column;justify-content: space-between;">
-          <div style="border-bottom:solid 1px black;color:#4D644F;padding:0.5rem;margin:0 0 0 0;display:flex;justify-content:space-between;font-style: italic;font-weight:light;font-size:1.8rem;">
-            <h3 style="margin:0; font-weight: 100;">Cocktails Strainer</h3>
-            <h3 style="margin:0; font-weight: 100;">03</h3>
+          <div style="border-bottom:solid 1px black;color:#4D644F;padding:1rem;margin:0 0 0 0;display:flex;justify-content:space-between;font-style: italic;font-weight:light;font-size:1.8rem;">
+            <h3 style="margin:0; font-weight: 100;">Bar Spoon</h3>
+            <h3 style="margin:0; font-weight: 100;">08</h3>
           </div>
-          <img class="img" src="/images/tools/tools-25.png" alt="" style="display: block;margin:auto;">
+          <img class="img" src="/images/tools/tools-25.png" alt="" style="display: block;margin:auto;scale:80%">
         </div>
 
       </div>
