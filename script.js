@@ -23,6 +23,19 @@ const tools=[
     {name:'Bar Spoon',number:'08',detail:'A specialized spoon used in cocktail making, typically longer than a regular spoon. It usually measures around 10 to 12 inches in length, with a twisted handle and a small bowl at the end.',type:'',how:['To mix cocktails directly in the glass, ensuring even distribution of ingredients and flavors.','They\'re also used for layering drinks, where different liquids are carefully poured over one another to create visually appealing and layered cocktails.','Simply hold the spoon by its handle and insert it into the cocktail glass, then gently stir or layer as desired, using a smooth and controlled motion.'],image:'tools-25.png'}
 ]
 
+const toolMobileData=[
+    [{name:'Bar Strainer',number:'01',detail:'Used for straining cocktails that are stirred or built directly in the serving glass.',image:'tools-16.png'},
+    {name:'Garnish Tools',number:'02',detail:'Skewers or toothpicks used to hold garnishes such as fruit, olivers, or cocktail onions.',image:'tools-17.png'}],
+    [{name:'Cocktail Shaker',number:'03',detail:'Used for straining cocktails that are stirred or built directly in the serving glass.',image:'tools-18.png'},
+    {name:'Ice Scoop',number:'04',detail:'Used to add ice to cocktails without touching it with hands, maintaining cleanliness and hygiene.',image:'tools-19.png'}],
+    [{name:'Citrus Juicer',number:'05',detail:'Manual or electric tool used to extract juice from citrus fruits such as lemons and limes.',image:'tools-20.png'},
+    {name:'Strainer',number:'06',detail:'Its over the mouth of a shaker tin to strain out ice and solid ingredients.',image:'tools-21.png'}],
+    [{name:'Garnish Tools',number:'07',detail:'Skewers or toothpicks used to hold garnishes such as fruit, olives, or cocktail onions.',image:'tools-22.png'},
+    {name:'Mallet & Lewis',number:'08',detail:'Used for crushing ice cubes into smaller, more manageable pieces for cocktails.',image:'tools-23.png'}],
+    [{name:'Muddler',number:'09',detail:'Used to crush and extract flavors from fruits, herbs, and spices.',image:'tools-24.png'},
+    {name:'Bar Spoon',number:'10',detail:'Features a long handle for stirring cocktails and layering ingredients.',image:'tools-25.png'}]
+]
+
 const starters=[
     {topic:'First mention of the word \"cock-tail\"',detail:'It was in the decades and centuries prior to 1800 that the artform of the Mixed Drink was evolving. Instead of recipes for individual drinks, the pattern was to created mixed drink "categories".',image:['pre1.jpg','pre2.jpg']},
     {topic:'\"cocktail\" first appearing in print in 1803',detail:'The cocktail comes onto the scene in the beginning of the 1800\'s and very gradually begins to get noticed. The concept of "mixed drink categories" was still prevalent, but over time would lose its luster.',image:['dawn1.jpg','dawn2.jpg']},
@@ -81,27 +94,26 @@ const bottles=[
 
 ]
 
-const levelBar=(data)=>{
+const levelBar=(data,size)=>{
     let html=''
     for(let i=0;i<5;i++){
-        i<data? html+='<div style="width:2rem; height:0.5rem; background:#FAF6EA;"></div>':html+='<div style="width:2rem; height:0.5rem; background:#8B9B86"></div>';
+        i<data? html+=`<div style="width:${size}rem; height:${size/4}rem; background:#FAF6EA;"></div>`:html+=`<div style="width:${size}rem; height:${size/4}rem; background:#8B9B86"></div>`;
     }
     return '<div style="display:flex;gap:0.2rem">'+html+'</div>';
 }
 
 
 const menuOver=(index)=>{
-    console.log('over')
     let menuItem=document.querySelector(`#menuItem-${index}`)
     let price_bar=document.querySelector(`#price-bar-${index}`)
     price_bar.innerHTML=`
         <div style="margin:1rem 0 0 0.5rem">
-            <p style="margin:0.3rem 0 0.3rem 0">Sweetness</p>
-            ${levelBar(menu[index].sweet)}
-            <p style="margin:0.3rem 0 0.3rem 0">Tart/Citrusy</p>
-            ${levelBar(menu[index].tart)}
-            <p style="margin:0.3rem 0 0.3rem 0">Bitter</p>
-            ${levelBar(menu[index].bitter)}
+            <p style="margin:0.3rem 0 0.3rem 0;font-family: 'Overused Grotesk Regular';">Sweetness</p>
+            ${levelBar(menu[index].sweet,2)}
+            <p style="margin:0.3rem 0 0.3rem 0;font-family: 'Overused Grotesk Regular';">Tart/Citrusy</p>
+            ${levelBar(menu[index].tart,2)}
+            <p style="margin:0.3rem 0 0.3rem 0;font-family: 'Overused Grotesk Regular';">Bitter</p>
+            ${levelBar(menu[index].bitter,2)}
         </div>
     `
     
@@ -114,7 +126,7 @@ const menuOver=(index)=>{
 }
 
 const menuOut=(index)=>{
-    console.log('not over')
+    let test=document.getElementsByClassName('menu-list')
     let menuItem=document.querySelector(`#menuItem-${index}`)
     let price_bar=document.querySelector(`#price-bar-${index}`)
     price_bar.innerHTML=`<p style="margin:1rem 0 0 0.5rem;font-family: Overused Grotesk Regular;">${menu[index].price}</p>`
@@ -123,6 +135,7 @@ const menuOut=(index)=>{
     pic.src=`/images/menu/${menu[index].image}`
     pic.style.objectFit='cover'
     menuItem.appendChild(pic)
+    console.log(test[index])
 }
 
 
@@ -215,7 +228,6 @@ const li_Display=(data)=>{
 }
 
 const toolOver=(index)=>{
-    console.log('over')
     let hoverTools=document.getElementsByClassName('hoverTools')
     hoverTools[index].innerHTML=`
         <div>
@@ -235,7 +247,6 @@ const toolOver=(index)=>{
 }
 
 const toolOut=(index)=>{
-    console.log('not over')
     let hoverTools=document.getElementsByClassName('hoverTools')
     hoverTools[index].innerHTML=`
         <div style="border-bottom:solid 1px black;color:#4D644F;padding:1rem;margin:0 0 0 0;display:flex;justify-content:space-between;font-style: italic;font-weight:light;font-size:1.8rem;">
@@ -269,7 +280,7 @@ const timelineMobile=()=>{
         info.innerHTML=`
             <div style="background:#415E43; padding:1rem;">
                 <h3 style="color:#FAF6EA;font-size:5vw;font-family: 'Overused Grotesk Regular';">${starters[index].topic}</h3>
-                <img src="images/timeline/${starters[index].image[0]}" style="width:100%;height:auto;object-fit:cover;border-radius:0.5rem;display:block;margin:0 auto 0 auto">
+                ${starters[index].image[0]? `<img src="images/timeline/${starters[index].image[0]}" style="width:100%;height:auto;object-fit:cover;border-radius:0.5rem;display:block;margin:0 auto 0 auto">`:starters[index].image[1]? `<img src="images/timeline/${starters[index].image[1]}" style="width:100%;height:auto;object-fit:cover;border-radius:0.5rem;display:block;margin:0 auto 0 auto">`:''}
                 <p style="color:#FAF6EA;font-size:3vw;font-family: 'Overused Grotesk Regular';">${starters[index].detail}</p>
             </div>
         `
@@ -278,15 +289,94 @@ const timelineMobile=()=>{
     } 
 }
 
+const createMenu=()=>{
+    for (let cocktail = 0; cocktail <= menuList.length-1; cocktail++) {
+        menuList[cocktail].innerHTML = `
+        <div ${mobile.matches? '':'style="height:100%;"'}>
+            <div id="menuItem-${cocktail}" style="height:100%;display:flex;flex-direction:column; justify-content:space-between">
+                <div id='menuHeader'>
+                    <div>
+                        <div>${menu[cocktail].name}</div>
+                        <div>${String((cocktail+1)).padStart(2, '0')}</div>
+                    </div>
+                    <p>${menu[cocktail].type}</p>
+                    <div id="price-bar-${cocktail}">
+                        <p>${menu[cocktail].price}</p>
+                    </div>
+                </div>
+                <img src="/images/menu/${menu[cocktail].image}" style="object-fit:cover; width:100%">
+            </div>
+            ${mobile.matches? `<div id="mobileInfo-${cocktail}"></div>`:''}
+        </div>
+        ` 
+    }
+}
+
+let menuList=document.getElementsByClassName('menu-list')
+const menuMobile=()=>{
+    for(let index=0;index<menuList.length;index++){
+        let info = document.querySelector(`#mobileInfo-${index}`)
+        info.setAttribute('style','padding:1.5rem; margin:0; background:#415E43')
+        info.innerHTML=`
+            <p style="margin:0.3rem 0 0.3rem 0; color:#FAF6EA;font-family: 'Overused Grotesk Regular';">Sweetness</p>
+            ${levelBar(menu[index].sweet,2.5)}
+            <p style="margin:0.3rem 0 0.3rem 0; color:#FAF6EA;font-family: 'Overused Grotesk Regular';">Tart/Citrusy</p>
+            ${levelBar(menu[index].tart,2.5)}
+            <p style="margin:0.3rem 0 0.3rem 0; color:#FAF6EA;font-family: 'Overused Grotesk Regular';">Bitter</p>
+            ${levelBar(menu[index].bitter,2.5)}
+        `
+    }
+}
+
+const toolMobile=()=>{
+    let data=''
+    for(let i=0;i<5;i++){
+        data+=`
+            <div style="display:grid; grid-template-columns:50% 50%; border-top:solid 1px black">
+                <img src="images/tools/${toolMobileData[i][0].image}" style="width:100%;border-right:solid 1px black">
+                <div style="padding:1rem">
+                    <h3 style="margin:0; font-weight: 100;">${toolMobileData[i][0].name}</h3>
+                    <h3 style="margin:0; font-weight: 100;">${toolMobileData[i][0].number}</h3>
+                    <p>${toolMobileData[i][0].detail}</p>
+                </div>
+            </div>
+            <div style="display:grid; grid-template-columns:50% 50%; border-top:solid 1px black; ${i==4? 'border-bottom:solid 1px black':''}">
+                <div style="padding:1rem">
+                    <h3 style="margin:0; font-weight: 100;">${toolMobileData[i][1].name}</h3>
+                    <h3 style="margin:0; font-weight: 100;">${toolMobileData[i][1].number}</h3>
+                    <p>${toolMobileData[i][1].detail}</p>
+                </div>
+                <div style="width:100%;border-left:solid 1px black;">
+                    <img src="images/tools/${toolMobileData[i][1].image}" style="width:100%; ${i==4? 'rotate: 90deg':''}">
+                </div>
+            </div>
+        `
+    }
+
+    let tools=document.getElementById('grid');
+    tools.innerHTML=`
+        <div>
+           ${data}
+        </div>
+    `
+}
+
 
 function responsive(mobile) {
     if (mobile.matches) {
         document.getElementById('banner').src='/images/banner_mobile.svg'
         disableEvent('timeline-items')
         timelineMobile()
+        disableEvent('menu-list')
+        createMenu()
+        menuMobile()
+        toolMobile()
+        document.getElementById('footer-image').src='/images/footer/mobile.png'
     } else {
         document.getElementById('banner').src='/images/banner_pic.svg'
         enableEvent('timeline-items','mouse')
+        enableEvent('menu-list','menu')
+        createMenu()
     }
   }
   
@@ -301,24 +391,7 @@ function responsive(mobile) {
 
 changeSlide()
 
-var items
-let menuList=document.getElementsByClassName('menu-list')
 
-for (let cocktail = 0; cocktail <= menuList.length; cocktail++) {
-    menuList[cocktail].innerHTML = `
-    <div id="menuItem-${cocktail}" style="height:100%;display:flex;flex-direction:column; justify-content:space-between">
-        <div>
-            <div style="margin:0 0 0.5rem 1rem;display:flex;justify-content:space-between;font-style: italic;font-weight:light;font-size:1.5rem;">
-                <div>${menu[cocktail].name}</div>
-                <div>${String((cocktail+1)).padStart(2, '0')}</div>
-            </div>
-            <p style="margin:0 0 0.5rem 0.5rem;background:#415E43;width:fit-content;padding:0.3rem 0.8rem 0.3rem 0.8rem;border-radius:5rem;color:#FAF6EA;font-family: 'Overused Grotesk Regular';border:solid 1px #FAF6EA; font-size:0.8rem">${menu[cocktail].type}</p>
-            <div id="price-bar-${cocktail}">
-                <p style="margin:1rem 0 0 0.5rem;font-family: 'Overused Grotesk Regular';">${menu[cocktail].price}</p>
-            </div>
-        </div>
-        <img src="/images/menu/${menu[cocktail].image}" style="object-fit:cover; width:100%">
-    </div>
-    ` 
-}
+
+
 
