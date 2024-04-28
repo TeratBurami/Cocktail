@@ -108,11 +108,11 @@ const menuOver=(index)=>{
     let price_bar=document.querySelector(`#price-bar-${index}`)
     price_bar.innerHTML=`
         <div style="margin:1rem 0 0 0.5rem">
-            <p style="margin:0.3rem 0 0.3rem 0;font-family: 'Overused Grotesk Regular';">Sweetness</p>
+            <p class="fontOverused" style="margin:0.3rem 0 0.3rem 0;">Sweetness</p>
             ${levelBar(menu[index].sweet,2)}
-            <p style="margin:0.3rem 0 0.3rem 0;font-family: 'Overused Grotesk Regular';">Tart/Citrusy</p>
+            <p class="fontOverused" style="margin:0.3rem 0 0.3rem 0;">Tart/Citrusy</p>
             ${levelBar(menu[index].tart,2)}
-            <p style="margin:0.3rem 0 0.3rem 0;font-family: 'Overused Grotesk Regular';">Bitter</p>
+            <p class="fontOverused" style="margin:0.3rem 0 0.3rem 0;">Bitter</p>
             ${levelBar(menu[index].bitter,2)}
         </div>
     `
@@ -121,7 +121,7 @@ const menuOver=(index)=>{
     let detail=document.createElement('p')
     detail.innerText=menu[index].detail
     detail.style.padding='1rem'
-    detail.style.fontFamily='Overused Grotesk Regular'
+    detail.style.fontFamily='Overused Grotesk Light'
     menuItem.appendChild(detail)
 }
 
@@ -129,7 +129,7 @@ const menuOut=(index)=>{
     let test=document.getElementsByClassName('menu-list')
     let menuItem=document.querySelector(`#menuItem-${index}`)
     let price_bar=document.querySelector(`#price-bar-${index}`)
-    price_bar.innerHTML=`<p style="margin:1rem 0 0 0.5rem;font-family: Overused Grotesk Regular;">${menu[index].price}</p>`
+    price_bar.innerHTML=`<p class="fontOverused" style="margin:1rem 0 0 0.5rem;">${menu[index].price}</p>`
     menuItem.lastElementChild.remove()
     let pic=document.createElement('img')
     pic.src=`/images/menu/${menu[index].image}`
@@ -144,10 +144,10 @@ let droplist = document.createElement('div')
 const list=document.getElementsByClassName('timeline-items')
 const mouseOver=(index)=>{
     droplist.innerHTML=`
-    <div style="animation:fade 1s;padding:1rem; display:grid; grid-template-columns:40% 30% 30%;justify-content:evenly;  gap:2rem; width:100%">
+    <div style="animation:fade 1s;padding:1rem; display:grid; grid-template-columns:40% 30% 30%;justify-content:evenly;  gap:2rem; width:100%;">
         <div style="display:flex; flex-direction:column; justify-content:space-between;">
-            <h3 style="font-size:2rem;font-family: 'Overused Grotesk Regular'; margin:0; font-weight:100">${starters[index].topic}</h3>
-            <p style="font-size:1rem;font-family: 'Overused Grotesk Regular'; margin:0;">${starters[index].detail}</p>
+            <h3 class="fontOverused" style="font-size:2rem; margin:0; font-weight:100;font-style:normal">${starters[index].topic}</h3>
+            <p class="fontOverused" style="font-size:1rem; margin:0;font-style:normal">${starters[index].detail}</p>
         </div>
         <div>${starters[index].image[0]? `<img src="images/timeline/${starters[index].image[0]}" style="float:right;width:25rem;height:12rem;object-fit:cover;border-radius:0.5rem">`:''}</div>
         ${starters[index].image[1]? `<img src="images/timeline/${starters[index].image[1]}" style="width:25rem;height:12rem;object-fit:cover;border-radius:0.5rem">`:''}
@@ -173,13 +173,13 @@ const changeSlide=()=>{
     <button onclick="nextSlide()" style="cursor:pointer ;position: absolute; left:95%; top: 30%; font-size: 2rem; background: none; border:none">&gt;</button>
     <div style="animation:fade 0.5s; ${mobile.matches? '':'border-left: solid 1px black;'}">
         <div style="margin:1rem 2rem 0 0;float:right;background:#415E43; border-radius:5rem;padding:0rem 1rem 0rem 1rem; width:fit-content">
-            <h3 style="font-size:1.2rem;margin:0;text-align:center;font-family: Overused Grotesk Light;color:white;">${bottles[page][0].percent}</h3>
-            <p style="font-size:0.6rem;color:white;margin:0 0 0.3rem 0;font-family: Overused Grotesk Light;">Concentration of Alcohol</p>
+            <h3 class="fontOverused" style="font-size:1.2rem;margin:0;text-align:center;color:white;">${bottles[page][0].percent}</h3>
+            <p class="fontOverused" style="font-size:0.6rem;color:white;margin:0 0 0.3rem 0;">Concentration of Alcohol</p>
         </div>
         <img src="${bottles[page][0].image}" style="object-fit:cover; width:100%; margin-bottom:2rem">
         <div>
-            <h3 id="name1" style="font-size:1.5rem;font-family: Overused Grotesk Light;border-bottom: solid 1px black;border-top: solid 1px black; padding:0.5rem 0.5rem 0.5rem 2rem;margin:0;">${bottles[page][0].name}</h3>
-            <div style="font-family: Overused Grotesk Light;font-size:0.8rem;display:flex; justify-content:space-between;padding:0.5rem">
+            <h3 id="name1" class="fontOverused" style="font-size:1.5rem;border-bottom: solid 1px black;border-top: solid 1px black; padding:0.5rem 0.5rem 0.5rem 2rem;margin:0;">${bottles[page][0].name}</h3>
+            <div class="fontOverused" style="font-size:0.8rem;display:flex; justify-content:space-between;padding:0.5rem">
                 <p style="width:70%">${bottles[page][0].detail}</p>
                 <p style="">${bottles[page][0].price}</p>
             </div>
@@ -187,13 +187,13 @@ const changeSlide=()=>{
     </div>
     <div style="animation:fade 0.5s; border-left: solid 1px black;">
         <div style="margin:1rem 2rem 0 0;float:right;background:#415E43; border-radius:5rem;padding:0rem 1rem 0rem 1rem; width:fit-content">
-            <h3 style="font-size:1.2rem;margin:0;text-align:center;font-family: Overused Grotesk Light;color:white;">${bottles[page][1].percent}</h3>
-            <p style="font-size:0.6rem;color:white;margin:0 0 0.3rem 0;font-family: Overused Grotesk Light;">Concentration of Alcohol</p>
+            <h3 class="fontOverused" style="font-size:1.2rem;margin:0;text-align:center;color:white;">${bottles[page][1].percent}</h3>
+            <p class="fontOverused" style="font-size:0.6rem;color:white;margin:0 0 0.3rem 0;">Concentration of Alcohol</p>
         </div>
         <img src="${bottles[page][1].image}" style="object-fit:cover; width:100%; margin-bottom:2rem">
         <div>
-            <h3 id="name1" style="font-size:1.5rem;font-family: Overused Grotesk Light;border-bottom: solid 1px black;border-top: solid 1px black; padding:0.5rem 0.5rem 0.5rem 2rem;margin:0;">${bottles[page][1].name}</h3>
-            <div style="font-family: Overused Grotesk Light;font-size:0.8rem;display:flex; justify-content:space-between;padding:0.5rem">
+            <h3 class="fontOverused" id="name1" style="font-size:1.5rem;border-bottom: solid 1px black;border-top: solid 1px black; padding:0.5rem 0.5rem 0.5rem 2rem;margin:0;">${bottles[page][1].name}</h3>
+            <div class="fontOverused" style="font-size:0.8rem;display:flex; justify-content:space-between;padding:0.5rem">
                 <p style="width:70%">${bottles[page][1].detail}</p>
                 <p style="">${bottles[page][1].price}</p>
             </div>
@@ -222,7 +222,7 @@ const li_Display=(data)=>{
     data.forEach(e => {
         html+=`<li>- &nbsp;&nbsp; ${e}</li>`
     });
-    return '<ul style="list-style:none;padding:0.5rem;font-family: Overused Grotesk Regular;">'+html+'</ul>'
+    return '<ul class="fontOverused" style="list-style:none;padding:0.5rem;">'+html+'</ul>'
 }
 
 const toolOver=(index)=>{
@@ -233,12 +233,12 @@ const toolOver=(index)=>{
                 <h3 style="margin:0; font-weight: 100;">${tools[index].name}</h3>
                 <h3 style="margin:0; font-weight: 100;">${tools[index].number}</h3>
             </div>
-            <p style="padding:1rem;font-family: 'Overused Grotesk Regular';">${tools[index].detail}</p>
+            <p class="fontOverused" style="padding:1rem;">${tools[index].detail}</p>
         </div>
         <div style="padding:1rem">
-            ${tools[index].type? '<p style="margin:0;font-family: Overused Grotesk Regular;">Types:</p>':''}
+            ${tools[index].type? '<p class="fontOverused" style="margin:0;">Types:</p>':''}
             ${tools[index].type? li_Display(tools[index].type):''}
-            ${tools[index].how? '<p style="margin:0;font-family: Overused Grotesk Regular;">How to Use:</p>':''}
+            ${tools[index].how? '<p class="fontOverused" style="margin:0;">How to Use:</p>':''}
             ${tools[index].how? li_Display(tools[index].how):''}
         </div>
     `
@@ -277,9 +277,9 @@ const timelineMobile=()=>{
         let info=document.createElement('div')
         info.innerHTML=`
             <div style="background:#415E43; padding:1rem;">
-                <h3 style="color:#FAF6EA;font-size:5vw;font-family: 'Overused Grotesk Regular';">${starters[index].topic}</h3>
+                <h3 class="fontOverused" style="color:#FAF6EA;font-size:5vw;font-style:normal">${starters[index].topic}</h3>
                 ${starters[index].image[0]? `<img src="images/timeline/${starters[index].image[0]}" style="width:100%;height:auto;object-fit:cover;border-radius:0.5rem;display:block;margin:0 auto 0 auto">`:starters[index].image[1]? `<img src="images/timeline/${starters[index].image[1]}" style="width:100%;height:auto;object-fit:cover;border-radius:0.5rem;display:block;margin:0 auto 0 auto">`:''}
-                <p style="color:#FAF6EA;font-size:3vw;font-family: 'Overused Grotesk Regular';">${starters[index].detail}</p>
+                <p class="fontOverused" style="color:#FAF6EA;font-size:3vw;font-style:normal">${starters[index].detail}</p>
             </div>
         `
 
@@ -297,7 +297,7 @@ const createMenu=()=>{
                         <div>${menu[cocktail].name}</div>
                         <div>${String((cocktail+1)).padStart(2, '0')}</div>
                     </div>
-                    <p>${menu[cocktail].type}</p>
+                    <p class="fontOverused" style="">${menu[cocktail].type}</p>
                     <div id="price-bar-${cocktail}" class="priceMenu">
                         <p>${menu[cocktail].price}</p>
                     </div>
@@ -314,13 +314,13 @@ let menuList=document.getElementsByClassName('menu-list')
 const menuMobile=()=>{
     for(let index=0;index<menuList.length;index++){
         let info = document.querySelector(`#mobileInfo-${index}`)
-        info.setAttribute('style','padding:1.5rem; margin:0; background:#415E43')
+        info.setAttribute('style','padding:1.5rem; margin:0; background:#415E43;')
         info.innerHTML=`
-            <p style="margin:0.3rem 0 0.3rem 0; color:#FAF6EA;font-family: 'Overused Grotesk Regular';">Sweetness</p>
+            <p class="fontOverused" style="margin:0.3rem 0 0.3rem 0; color:#FAF6EA;">Sweetness</p>
             ${levelBar(menu[index].sweet,2.5)}
-            <p style="margin:0.3rem 0 0.3rem 0; color:#FAF6EA;font-family: 'Overused Grotesk Regular';">Tart/Citrusy</p>
+            <p class="fontOverused" style="margin:0.3rem 0 0.3rem 0; color:#FAF6EA;">Tart/Citrusy</p>
             ${levelBar(menu[index].tart,2.5)}
-            <p style="margin:0.3rem 0 0.3rem 0; color:#FAF6EA;font-family: 'Overused Grotesk Regular';">Bitter</p>
+            <p class="fontOverused" style="margin:0.3rem 0 0.3rem 0; color:#FAF6EA;">Bitter</p>
             ${levelBar(menu[index].bitter,2.5)}
         `
 
@@ -334,16 +334,16 @@ const toolMobile=()=>{
             <div style="display:grid; grid-template-columns:50% 50%; border-top:solid 1px black">
                 <img src="images/tools/${toolMobileData[i][0].image}" style="width:100%;border-right:solid 1px black">
                 <div style="padding:1rem">
-                    <h3 style="margin:0; font-weight: 100;">${toolMobileData[i][0].name}</h3>
-                    <h3 style="margin:0; font-weight: 100;">${toolMobileData[i][0].number}</h3>
-                    <p>${toolMobileData[i][0].detail}</p>
+                    <h3 style="margin:0; font-weight: 100;font-family: 'PPEditorialNew-Italic';color:#415E43">${toolMobileData[i][0].name}</h3>
+                    <h3 style="margin:0; font-weight: 100;font-family: 'PPEditorialNew-Italic';color:#415E43">${toolMobileData[i][0].number}</h3>
+                    <p style="font-family: 'Overused Grotesk Light'; font-size:3vw">${toolMobileData[i][0].detail}</p>
                 </div>
             </div>
             <div style="display:grid; grid-template-columns:50% 50%; border-top:solid 1px black; ${i==4? 'border-bottom:solid 1px black':''}">
                 <div style="padding:1rem">
-                    <h3 style="margin:0; font-weight: 100;">${toolMobileData[i][1].name}</h3>
-                    <h3 style="margin:0; font-weight: 100;">${toolMobileData[i][1].number}</h3>
-                    <p>${toolMobileData[i][1].detail}</p>
+                    <h3 style="margin:0; font-weight: 100;font-family: 'PPEditorialNew-Italic';color:#415E43">${toolMobileData[i][1].name}</h3>
+                    <h3 style="margin:0; font-weight: 100;font-family: 'PPEditorialNew-Italic';color:#415E43">${toolMobileData[i][1].number}</h3>
+                    <p style="font-family: 'Overused Grotesk Light'; font-size:3vw">${toolMobileData[i][1].detail}</p>
                 </div>
                 <div style="width:100%;border-left:solid 1px black;">
                     <img src="images/tools/${toolMobileData[i][1].image}" style="width:100%; ${i==4? 'rotate: 90deg':''}">
